@@ -1,0 +1,2346 @@
+<!DOCTYPE html>
+<html lang="bn" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Satkhira Officers Forum | সাতক্ষীরা অফিসার্স ফোরাম (sofbd.org)</title>
+
+  <!-- Google Fonts: Inter & Hind Siliguri for bilingual typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6.5 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              emerald: '#059669',
+              teal: '#0d9488',
+              cyan: '#0284c7',
+              gold: '#d97706',
+              surface: '#ffffff',
+              subtle: '#f8fafc',
+              border: '#e2e8f0',
+              navy: '#0f172a'
+            }
+          },
+          fontFamily: {
+            sans: ['var(--sof-font, "Plus Jakarta Sans")', '"Inter"', '"Hind Siliguri"', 'sans-serif'],
+            bn: ['"Hind Siliguri"', 'sans-serif'],
+            mono: ['"Fira Code"', 'monospace'],
+            outfit: ['"Outfit"', 'sans-serif']
+          },
+          boxShadow: {
+            'glass': '0 20px 40px -15px rgba(15, 23, 42, 0.07), 0 0 1px 1px rgba(255, 255, 255, 0.9) inset',
+            'glass-hover': '0 25px 50px -12px rgba(5, 150, 105, 0.16), 0 0 1px 1px rgba(255, 255, 255, 1) inset',
+            'neon': '0 10px 25px -5px rgba(5, 150, 105, 0.25)'
+          },
+          animation: {
+            'glow-pulse': 'glowPulse 6s ease-in-out infinite',
+            'float-subtle': 'floatSubtle 8s ease-in-out infinite'
+          },
+          keyframes: {
+            glowPulse: {
+              '0%, 100%': { opacity: '0.45', transform: 'scale(1)' },
+              '50%': { opacity: '0.8', transform: 'scale(1.05)' }
+            },
+            floatSubtle: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-6px)' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --sof-primary: #059669;
+      --sof-secondary: #0284c7;
+      --sof-accent: #d97706;
+      --sof-bg: #f8fafc;
+      --sof-card-bg: rgba(255, 255, 255, 0.88);
+      --sof-card-border: rgba(226, 232, 240, 0.85);
+      --sof-font: 'Plus Jakarta Sans';
+    }
+
+    body {
+      background-color: var(--sof-bg);
+      font-family: var(--sof-font), 'Hind Siliguri', sans-serif;
+      color: #0f172a;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      overflow-x: hidden;
+    }
+
+    /* Ambient futuristic background gradients */
+    .light-mesh-bg {
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(5, 150, 105, 0.08) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(2, 132, 199, 0.07) 0px, transparent 50%),
+        radial-gradient(at 50% 100%, rgba(217, 119, 6, 0.05) 0px, transparent 50%);
+    }
+
+    .glass-panel-light {
+      background: var(--sof-card-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--sof-card-border);
+    }
+
+    .glass-card-light {
+      background: var(--sof-card-bg);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid var(--sof-card-border);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .glass-card-light:hover {
+      border-color: rgba(5, 150, 105, 0.35);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 35px -10px rgba(5, 150, 105, 0.12);
+    }
+
+    /* Visual inline edit highlight */
+    body.cms-active [data-cms] {
+      outline: 2px dashed #0284c7 !important;
+      outline-offset: 4px;
+      cursor: text !important;
+      position: relative;
+    }
+    body.cms-active [data-cms]:hover::after {
+      content: '✎ Click to edit content';
+      position: absolute;
+      top: -24px;
+      left: 0;
+      background: #0284c7;
+      color: #ffffff;
+      font-size: 10px;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 600;
+      pointer-events: none;
+      white-space: nowrap;
+      z-index: 100;
+      font-family: monospace;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Custom high-aesthetic light scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 6px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--sof-primary);
+    }
+  </style>
+</head>
+<body class="light-mesh-bg antialiased selection:bg-emerald-500/20 selection:text-emerald-900 min-h-screen flex flex-col justify-between">
+
+  <!-- ================= SUBTLE LIGHT PARTICLES / MESH CANVAS ================= -->
+  <canvas id="lightParticleCanvas" class="fixed inset-0 pointer-events-none z-0 opacity-40"></canvas>
+
+  <!-- ================= TOP HUD TICKER BAR (LIGHT HIGH TECH) ================= -->
+  <div class="relative z-30 bg-white/90 backdrop-blur-md border-b border-slate-200/80 text-xs py-2 px-4 sm:px-6 shadow-sm">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-2">
+      <!-- Live ticker -->
+      <div class="flex items-center gap-2 overflow-hidden w-full md:w-auto">
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-mono text-[10px] uppercase tracking-wider border border-emerald-200 shrink-0 font-bold">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-ping"></span> OFFICIAL BULLETIN
+        </span>
+        <div class="truncate text-slate-700 font-bn text-xs">
+          <span id="tickerText" data-cms="tickerText">সাতক্ষীরা অফিসার্স ফোরাম: সুন্দরবন ইকো-পার্কে আগামী ১৫ নভেম্বর অনুষ্ঠিতব্য বার্ষিক মিলনমেলা ও সাধারণ সভায় সকল কর্মকর্তা সাদরে আমন্ত্রিত!</span>
+        </div>
+      </div>
+
+      <!-- Quick Action Shortcuts & Language Switch -->
+      <div class="flex items-center gap-3 text-[11px] shrink-0 font-mono text-slate-600">
+        <span class="text-emerald-600 font-semibold hidden sm:inline-flex items-center gap-1">
+          <i class="fa-solid fa-signal text-[10px]"></i> CLOUD NODE: ACTIVE
+        </span>
+        <span class="text-slate-300">|</span>
+        <button onclick="toggleLanguage()" class="hover:text-emerald-600 transition-colors flex items-center gap-1 font-sans">
+          <i class="fa-solid fa-globe text-cyan-600"></i> <span id="currentLangLabel">বাংলা</span>
+        </button>
+        <span class="text-slate-300">|</span>
+        <button onclick="openModal('ticketModal')" class="hover:text-amber-600 transition-colors flex items-center gap-1">
+          <i class="fa-solid fa-ticket text-amber-500"></i> AGM Pass
+        </button>
+        <span class="text-slate-300">|</span>
+        <button onclick="openAdminPanelAuth()" class="px-2.5 py-0.5 rounded-md bg-emerald-50 text-emerald-800 border border-emerald-300 hover:bg-emerald-100 transition-all font-bold flex items-center gap-1.5 shadow-sm">
+          <i class="fa-solid fa-gear text-emerald-600"></i> <span id="adminNavBtnText">Admin Panel</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MASTER HEADER / NAVBAR ================= -->
+  <header class="sticky top-0 z-40 glass-panel-light border-b border-slate-200/90 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Brand Identity & Logo -->
+        <a href="#hero" class="flex items-center gap-3 group">
+          <div id="brandLogoContainer" class="relative w-12 h-12 rounded-xl p-0.5 bg-gradient-to-tr from-emerald-500 via-teal-500 to-cyan-500 shadow-md group-hover:scale-105 transition-transform duration-300 flex items-center justify-center overflow-hidden bg-white">
+            <img id="siteLogoImg" src="https://placehold.co/120x120/ffffff/059669?text=SOF" alt="SOF Logo" class="w-full h-full object-cover rounded-[10px]">
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span id="siteTitleEn" data-cms="siteTitleEn" class="text-lg sm:text-xl font-extrabold tracking-tight text-slate-900 font-outfit uppercase">Satkhira Officers Forum</span>
+              <span id="siteAcronym" data-cms="siteAcronym" class="text-[10px] px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-800 border border-emerald-300 font-mono font-extrabold">SOF</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span id="siteTitleBn" data-cms="siteTitleBn" class="text-xs font-semibold text-slate-700 font-bn">সাতক্ষীরা অফিসার্স ফোরাম</span>
+              <span class="text-slate-300 text-[10px]">•</span>
+              <span id="siteTagline" data-cms="siteTagline" class="text-[11px] text-emerald-700 font-mono font-medium">www.sofbd.org</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Items -->
+        <nav class="hidden lg:flex items-center space-x-1 text-xs font-medium text-slate-700">
+          <a href="#hero" class="px-3.5 py-2 rounded-lg hover:text-emerald-700 hover:bg-emerald-50 transition-all font-semibold">হোম</a>
+          <a href="#matrix" class="px-3.5 py-2 rounded-lg hover:text-emerald-700 hover:bg-emerald-50 transition-all font-semibold">উপজেলা ম্যাট্রিক্স</a>
+          <a href="#leadership" class="px-3.5 py-2 rounded-lg hover:text-emerald-700 hover:bg-emerald-50 transition-all font-semibold">কার্যনির্বাহী পরিষদ</a>
+          <a href="#directory" class="px-3.5 py-2 rounded-lg hover:text-emerald-700 hover:bg-emerald-50 transition-all font-semibold">কর্মকর্তা ডিরেক্টরি</a>
+          <a href="#initiatives" class="px-3.5 py-2 rounded-lg hover:text-emerald-700 hover:bg-emerald-50 transition-all font-semibold">সুন্দরবন ও উন্নয়ন</a>
+          <a href="#notices" class="px-3.5 py-2 rounded-lg hover:text-emerald-700 hover:bg-emerald-50 transition-all font-semibold">বিজ্ঞপ্তি</a>
+          <a href="#blood" class="px-3.5 py-2 rounded-lg text-rose-700 hover:bg-rose-50 transition-all font-bold"><i class="fa-solid fa-droplet text-rose-600"></i> রক্ত ব্যাংক</a>
+        </nav>
+
+        <!-- Right Action Center -->
+        <div class="hidden sm:flex items-center gap-2.5">
+          <button onclick="openModal('loginModal')" class="px-3.5 py-2 text-xs font-semibold rounded-xl text-slate-700 hover:text-slate-900 bg-white hover:bg-slate-50 border border-slate-200 shadow-sm transition-all flex items-center gap-1.5">
+            <i class="fa-solid fa-fingerprint text-cyan-600"></i> মেম্বার লগইন
+          </button>
+          <button onclick="openModal('applyModal')" class="px-4 py-2 text-xs font-bold rounded-xl bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 hover:from-emerald-500 hover:to-emerald-600 text-white shadow-md shadow-emerald-600/20 transition-all flex items-center gap-1.5">
+            <i class="fa-solid fa-id-card"></i> সদস্যপদ আবেদন
+          </button>
+        </div>
+
+        <!-- Mobile hamburger toggle -->
+        <button onclick="toggleMobileNav()" class="lg:hidden p-2 text-slate-600 hover:text-slate-900 rounded-lg focus:outline-none">
+          <i class="fa-solid fa-bars-staggered text-xl"></i>
+        </button>
+      </div>
+
+      <!-- Mobile dropdown drawer -->
+      <div id="mobileDrawer" class="hidden lg:hidden py-4 border-t border-slate-200 space-y-2 text-sm font-bn">
+        <a href="#hero" onclick="toggleMobileNav()" class="block px-3 py-2 rounded-lg hover:bg-emerald-50 text-slate-800">হোম</a>
+        <a href="#matrix" onclick="toggleMobileNav()" class="block px-3 py-2 rounded-lg hover:bg-emerald-50 text-slate-800">উপজেলা ম্যাট্রিক্স</a>
+        <a href="#leadership" onclick="toggleMobileNav()" class="block px-3 py-2 rounded-lg hover:bg-emerald-50 text-slate-800">কার্যনির্বাহী পরিষদ</a>
+        <a href="#directory" onclick="toggleMobileNav()" class="block px-3 py-2 rounded-lg hover:bg-emerald-50 text-slate-800">কর্মকর্তা ডিরেক্টরি</a>
+        <a href="#initiatives" onclick="toggleMobileNav()" class="block px-3 py-2 rounded-lg hover:bg-emerald-50 text-slate-800">সুন্দরবন ও উন্নয়ন কার্যক্রম</a>
+        <a href="#notices" onclick="toggleMobileNav()" class="block px-3 py-2 rounded-lg hover:bg-emerald-50 text-slate-800">বিজ্ঞপ্তি ও সার্কুলার</a>
+        <div class="pt-3 border-t border-slate-200 flex flex-col gap-2">
+          <button onclick="openModal('applyModal'); toggleMobileNav();" class="w-full py-2.5 rounded-xl bg-emerald-600 text-white font-bold">সদস্যপদের আবেদন</button>
+          <button onclick="openModal('loginModal'); toggleMobileNav();" class="w-full py-2.5 rounded-xl border border-slate-300 text-slate-800 bg-white">কর্মকর্তা লগইন</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= HERO SECTION (LIGHT HIGH-TECH EXECUTIVE) ================= -->
+    <section id="hero" class="relative py-16 sm:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden z-10">
+      <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Column: Core Identity & Purpose -->
+        <div class="lg:col-span-7 space-y-6">
+          
+          <!-- Futuristic light badge -->
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 shadow-sm text-xs font-mono text-emerald-800">
+            <span class="w-2 h-2 rounded-full bg-emerald-600 animate-ping"></span>
+            <span id="heroBadgeText" data-cms="heroBadgeText" class="font-bold">OFFICERS NETWORK OF SATKHIRA COAST</span>
+            <span class="text-slate-300">•</span>
+            <span class="text-cyan-700 font-semibold">SOFBD.ORG</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.18] text-slate-900">
+            <span id="heroTitleLine1" data-cms="heroTitleLine1">ঐক্য, মেধা ও দূরদর্শিতায়</span> <br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600" id="heroTitleHighlight" data-cms="heroTitleHighlight">
+              উপকূলের দীপ্ত প্রত্যয়
+            </span>
+          </h1>
+
+          <p class="text-slate-700 text-base sm:text-lg leading-relaxed font-bn max-w-2xl" id="heroDescription" data-cms="heroDescription">
+            সাতক্ষীরা জেলার সর্বস্তরের সরকারি, বিচার বিভাগীয়, প্রতিরক্ষা, ব্যাংক ও সংবিধিবদ্ধ প্রতিষ্ঠানের শীর্ষ কর্মকর্তাদের বুদ্ধিবৃত্তিক ঐক্যমঞ্চ। সুন্দরবনের ঐতিহ্যকে হৃদয়ে ধারণ করে জনকল্যাণ ও জেলা ব্র্যান্ডিংয়ে আমাদের টেকসই প্রয়াস।
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-wrap gap-3.5 pt-2">
+            <button onclick="openModal('applyModal')" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-500 hover:to-teal-600 text-white font-bold text-sm shadow-md shadow-emerald-700/20 transition-all flex items-center gap-2 hover:-translate-y-0.5">
+              <i class="fa-solid fa-address-card"></i> অনলাইন সদস্যপদ আবেদন
+            </button>
+
+            <a href="#directory" class="px-6 py-3.5 rounded-xl bg-white hover:bg-slate-50 text-slate-800 border border-slate-200 text-sm font-bold shadow-sm transition-all flex items-center gap-2 hover:-translate-y-0.5">
+              <i class="fa-solid fa-magnifying-glass text-cyan-600"></i> কর্মকর্তা ডিরেক্টরি
+            </a>
+
+            <button onclick="openModal('ticketModal')" class="px-5 py-3.5 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 text-sm font-bold shadow-sm transition-all flex items-center gap-2 hover:bg-amber-100">
+              <i class="fa-solid fa-calendar-check text-amber-600"></i> AGM পাস বুকিং
+            </button>
+          </div>
+
+          <!-- Live Metrics HUD (Light Glass) -->
+          <div class="pt-8 grid grid-cols-2 sm:grid-cols-4 gap-4 border-t border-slate-200 font-mono">
+            <div class="p-4 rounded-xl bg-white border border-slate-200/90 shadow-sm">
+              <div class="text-2xl sm:text-3xl font-black text-emerald-600" id="statMembers" data-cms="statMembers">380+</div>
+              <div class="text-xs text-slate-600 font-bn font-semibold mt-0.5">কর্মকর্তা ও ক্যাডার</div>
+            </div>
+            <div class="p-4 rounded-xl bg-white border border-slate-200/90 shadow-sm">
+              <div class="text-2xl sm:text-3xl font-black text-cyan-600" id="statLife" data-cms="statLife">240+</div>
+              <div class="text-xs text-slate-600 font-bn font-semibold mt-0.5">আজীবন সদস্য</div>
+            </div>
+            <div class="p-4 rounded-xl bg-white border border-slate-200/90 shadow-sm">
+              <div class="text-2xl sm:text-3xl font-black text-amber-600" id="statUpazilas" data-cms="statUpazilas">07</div>
+              <div class="text-xs text-slate-600 font-bn font-semibold mt-0.5">উপজেলা নেটওয়ার্ক</div>
+            </div>
+            <div class="p-4 rounded-xl bg-white border border-slate-200/90 shadow-sm">
+              <div class="text-2xl sm:text-3xl font-black text-indigo-600" id="statRelief" data-cms="statRelief">৳1.8 Cr</div>
+              <div class="text-xs text-slate-600 font-bn font-semibold mt-0.5">শিক্ষা ও কল্যাণ তহবিল</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Interactive Executive Spotlight Card -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative glass-card-light rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-xl overflow-hidden bg-white/95">
+            <!-- Subtle accent top line -->
+            <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500"></div>
+
+            <!-- Card Header -->
+            <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-shield-halved text-emerald-600"></i>
+                <span class="text-xs font-mono font-bold tracking-wider uppercase text-slate-700">EXECUTIVE SPOTLIGHT</span>
+              </div>
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-emerald-50 text-emerald-800 border border-emerald-200 font-bold">SESSION 2025-27</span>
+            </div>
+
+            <!-- President Profile -->
+            <div class="mt-6 flex items-center gap-4">
+              <div class="relative w-16 h-16 rounded-2xl overflow-hidden p-0.5 bg-gradient-to-br from-emerald-500 to-cyan-600 shrink-0 shadow-md">
+                <img id="presHeroImg" src="https://placehold.co/150x150/ffffff/059669?text=President" alt="President" class="w-full h-full object-cover rounded-[14px]">
+              </div>
+              <div>
+                <span class="text-[10px] font-mono uppercase tracking-wider text-emerald-700 font-bold block">PRESIDENT / সভাপতি</span>
+                <h3 class="text-base font-bold text-slate-900 font-bn" id="presHeroName" data-cms="presHeroName">জনাব মোঃ আসাদুজ্জামান, এনডিসি</h3>
+                <p class="text-xs text-slate-600" id="presHeroPost" data-cms="presHeroPost">অতিরিক্ত সচিব (অব.), জনপ্রশাসন মন্ত্রণালয়</p>
+              </div>
+            </div>
+
+            <!-- President's Message Quote -->
+            <div class="mt-4 p-4 rounded-xl bg-slate-50 border border-slate-200/80 text-xs text-slate-700 italic font-bn leading-relaxed">
+              "<span id="presHeroQuote" data-cms="presHeroQuote">সাতক্ষীরার উপকূলীয় মেধা ও সততা আজ জাতীয় নীতিনির্ধারণে উজ্জ্বল ভূমিকা রাখছে। পারস্পরিক সৌহার্দ্য ও কল্যাণে আমরা ঐক্যবদ্ধ।</span>"
+            </div>
+
+            <!-- General Secretary Section -->
+            <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <div class="w-9 h-9 rounded-xl bg-cyan-50 border border-cyan-200 flex items-center justify-center text-xs text-cyan-700 font-bold">
+                  <i class="fa-solid fa-user-check"></i>
+                </div>
+                <div>
+                  <p class="text-[10px] text-slate-500 font-mono font-medium">GENERAL SECRETARY</p>
+                  <p class="text-xs font-bold text-slate-800 font-bn" id="gsHeroName" data-cms="gsHeroName">ড. খোন্দকার আজিম আহমেদ (অধ্যাপক, ঢাবি)</p>
+                </div>
+              </div>
+              <button onclick="viewLeadershipSpotlight()" class="px-3 py-1.5 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-emerald-800 text-xs border border-emerald-200 transition-colors font-bold font-mono">
+                PROFILE &rarr;
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= UPAZILA MATRIX & DISTRICT HUD ================= -->
+    <section id="matrix" class="py-14 relative z-10 border-t border-slate-200 bg-white/60">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-wider text-emerald-800 bg-emerald-100/70 px-3 py-1 rounded-full border border-emerald-200 font-bold">DISTRICT REPRESENTATION</span>
+            <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-2 font-bn">সাতক্ষীরা জেলার ৭টি উপজেলা সমন্বয় হাব</h2>
+            <p class="text-slate-600 text-xs sm:text-sm font-bn">উপজেলা অনুযায়ী কর্মকর্তা প্রতিনিধিত্ব ও আঞ্চলিক যোগাযোগ নেটওয়ার্ক</p>
+          </div>
+          <div class="text-xs font-mono text-slate-500 font-medium">
+            CLICK CARD TO FILTER OFFICIALS
+          </div>
+        </div>
+
+        <!-- Upazila Cards Grid -->
+        <div id="upazilaGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <!-- Dynamically injected via JS -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= LEADERSHIP & EXECUTIVE COUNCIL ================= -->
+    <section id="leadership" class="py-16 relative z-10 border-t border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-wider text-cyan-800 bg-cyan-100/70 px-3 py-1 rounded-full border border-cyan-200 font-bold">GOVERNANCE & ADVISORY</span>
+            <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-2 font-bn">কার্যনির্বাহী পরিষদ ও উপদেষ্টা মণ্ডলী (২০২৫-২৭)</h2>
+            <p class="text-slate-600 text-xs sm:text-sm font-bn">গঠনতন্ত্র ও কেন্দ্রীয় নীতিনির্ধারণ অনুযায়ী নির্বাচিত ও মনোনীত কর্মকর্তা প্যানেল</p>
+          </div>
+
+          <!-- Filter tabs -->
+          <div class="flex gap-1.5 p-1 rounded-xl bg-slate-100 border border-slate-200 font-bn text-xs">
+            <button onclick="renderCommittee('all', this)" class="comm-tab active px-4 py-2 rounded-lg font-bold bg-white text-emerald-800 shadow-sm">সকল নেতৃবৃন্দ</button>
+            <button onclick="renderCommittee('advisor', this)" class="comm-tab px-4 py-2 rounded-lg font-semibold text-slate-600 hover:text-slate-900">উপদেষ্টা পরিষদ</button>
+            <button onclick="renderCommittee('executive', this)" class="comm-tab px-4 py-2 rounded-lg font-semibold text-slate-600 hover:text-slate-900">নির্বাহী কর্মকর্তা</button>
+          </div>
+        </div>
+
+        <!-- Leadership Cards -->
+        <div id="committeeCardsContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Injected via JavaScript -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= COMPREHENSIVE SEARCHABLE MEMBER DIRECTORY ================= -->
+    <section id="directory" class="py-16 relative z-10 border-t border-slate-200 bg-white/70">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-10">
+          <span class="text-xs font-mono uppercase tracking-wider text-emerald-800 bg-emerald-100/70 px-3 py-1 rounded-full border border-emerald-200 font-bold">CENTRAL DIRECTORY</span>
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-2 font-bn">সাতক্ষীরা অফিসার্স ফোরাম সদস্য ডিরেক্টরি</h2>
+          <p class="text-slate-600 text-xs sm:text-sm font-bn">ক্যাডার, সার্ভিস, মন্ত্রণালয় ও নিজ উপজেলা অনুযায়ী কর্মকর্তাদের সহজে খুঁজুন</p>
+        </div>
+
+        <!-- Filter Controls Hub -->
+        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm mb-8 space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            <!-- Search input -->
+            <div class="relative">
+              <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3 text-slate-400 text-xs"></i>
+              <input type="text" id="dirSearchInput" oninput="filterDirectory()" placeholder="নাম, পদবী, মন্ত্রণালয় বা ব্যাচ..." class="w-full pl-9 pr-3 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-emerald-500 font-bn">
+            </div>
+
+            <!-- Upazila Filter -->
+            <div>
+              <select id="dirUpazilaSelect" onchange="filterDirectory()" class="w-full px-3 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-800 focus:outline-none focus:border-emerald-500 font-bn">
+                <option value="">সকল উপজেলা (All 7 Upazilas)</option>
+                <option value="সাতক্ষীরা সদর">সাতক্ষীরা সদর</option>
+                <option value="শ্যামনগর">শ্যামনগর</option>
+                <option value="কালীগঞ্জ">কালীগঞ্জ</option>
+                <option value="তালা">তালা</option>
+                <option value="কলারোয়া">কলারোয়া</option>
+                <option value="দেবহাটা">দেবহাটা</option>
+                <option value="আশাশুনি">আশাশুনি</option>
+              </select>
+            </div>
+
+            <!-- Cadre Filter -->
+            <div>
+              <select id="dirCadreSelect" onchange="filterDirectory()" class="w-full px-3 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-800 focus:outline-none focus:border-emerald-500 font-bn">
+                <option value="">সকল সার্ভিস ও ক্যাডার</option>
+                <option value="প্রশাসন">বিসিএস (প্রশাসন)</option>
+                <option value="পুলিশ">বিসিএস (পুলিশ)</option>
+                <option value="স্বাস্থ্য">বিসিএস (স্বাস্থ্য)</option>
+                <option value="শিক্ষা">বিসিএস (শিক্ষা)</option>
+                <option value="বিচার বিভাগ">জুডিশিয়াল সার্ভিস (বিচারক)</option>
+                <option value="সশস্ত্র বাহিনী">প্রতিরক্ষা বাহিনী (সেনা/নৌ/বিমান)</option>
+                <option value="ট্যাক্স ও শুল্ক">বিসিএস (কর / শুল্ক)</option>
+                <option value="ব্যাংকিং">বাংলাদেশ ব্যাংক ও বাণিজ্যিক ব্যাংক</option>
+              </select>
+            </div>
+
+            <!-- Membership Tier -->
+            <div>
+              <select id="dirTierSelect" onchange="filterDirectory()" class="w-full px-3 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-800 focus:outline-none focus:border-emerald-500 font-bn">
+                <option value="">সকল সদস্য পদবি</option>
+                <option value="আজীবন সদস্য">আজীবন সদস্য (Life Member)</option>
+                <option value="সাধারণ সদস্য">সাধারণ সদস্য (General)</option>
+                <option value="দাতা সদস্য">দাতা সদস্য (Donor)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between text-xs font-mono text-slate-600 pt-3 border-t border-slate-100">
+            <span class="font-bn">ফিল্টার ফলাফল: <strong id="dirResultCount" class="text-emerald-700 font-mono text-sm">0</strong> জন কর্মকর্তা</span>
+            <button onclick="resetDirectoryFilters()" class="text-xs text-emerald-700 hover:text-emerald-800 font-bn font-semibold flex items-center gap-1">
+              <i class="fa-solid fa-arrows-rotate"></i> ফিল্টার রিসেট
+            </button>
+          </div>
+        </div>
+
+        <!-- Member Directory Grid -->
+        <div id="directoryGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <!-- Injected via JS -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= INITIATIVES: SUNDARBANS & PHILANTHROPY ================= -->
+    <section id="initiatives" class="py-16 relative z-10 border-t border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-wider text-emerald-800 bg-emerald-100/70 px-3 py-1 rounded-full border border-emerald-200 font-bold">SUSTAINABLE DEVELOPMENT</span>
+            <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-2 font-bn">সুন্দরবন সংরক্ষণ ও উপকূলীয় উন্নয়ন কার্যক্রম</h2>
+            <p class="text-slate-600 text-xs sm:text-sm font-bn">সাতক্ষীরা জেলার প্রতি দায়বদ্ধতা থেকে ফোরামের অর্থায়নে পরিচালিত সামাজিক উন্নয়ন প্রকল্প</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 font-bn">
+          
+          <!-- Project 1 -->
+          <div class="glass-card-light rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between bg-white">
+            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-xl mb-4 border border-emerald-200 shadow-sm">
+              <i class="fa-solid fa-tree"></i>
+            </div>
+            <span class="text-[10px] font-mono text-emerald-800 uppercase tracking-widest font-bold">শ্যামনগর ও আশাশুনি উপকূল</span>
+            <h3 class="text-lg font-bold text-slate-900 mt-1">ম্যানগ্রোভ উপকূল সুরক্ষা ও ১ লক্ষ গোলপাতা চারা রোপণ</h3>
+            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+              ঘূর্ণিঝড় ও নদীভাঙন প্রতিরোধে স্থানীয় বন বিভাগ ও তরুণ স্বেচ্ছাসেবকদের সাথে যৌথভাবে বেড়িবাঁধ সুরক্ষা ও বনায়ন প্রকল্প।
+            </p>
+            <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-mono">
+              <span>FUND: ৳45 LAKH</span>
+              <span class="text-emerald-700 font-bold">STATUS: ACTIVE</span>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="glass-card-light rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between bg-white">
+            <div class="w-12 h-12 rounded-xl bg-cyan-100 text-cyan-700 flex items-center justify-center text-xl mb-4 border border-cyan-200 shadow-sm">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <span class="text-[10px] font-mono text-cyan-800 uppercase tracking-widest font-bold">মেধা বিকাশ ও ক্যারিয়ার</span>
+            <h3 class="text-lg font-bold text-slate-900 mt-1">সাতক্ষীরা মেধা বিকাশ ও বিসিএস মেন্টরিং সেল</h3>
+            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+              দেশের শীর্ষ বিশ্ববিদ্যালয়ে অধ্যয়নরত সাতক্ষীরার ১০০ জন অসচ্ছল মেধাবী শিক্ষার্থীকে প্রতি মাসে ৪,০০০ টাকা শিক্ষাবৃত্তি ও নিয়মিত মেন্টরিং।
+            </p>
+            <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-mono">
+              <span>STUDENTS: 100+</span>
+              <span class="text-cyan-700 font-bold">ONGOING</span>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="glass-card-light rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between bg-white">
+            <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center text-xl mb-4 border border-amber-200 shadow-sm">
+              <i class="fa-solid fa-house-chimney-medical"></i>
+            </div>
+            <span class="text-[10px] font-mono text-amber-800 uppercase tracking-widest font-bold">স্বাস্থ্য সহায়তা</span>
+            <h3 class="text-lg font-bold text-slate-900 mt-1">উপকূলীয় ভ্রাম্যমাণ বিশেষজ্ঞ মেডিকেল ক্যাম্প</h3>
+            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+              ফোরামের স্বনামধন্য চিকিৎসক কর্মকর্তাদের তত্ত্বাবধানে দেবহাটা ও কালীগঞ্জে বিনামূল্যে ফ্রি পরামর্শ, ইসিজি ও প্রয়োজনীয় ওষুধ বিতরণ।
+            </p>
+            <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-mono">
+              <span>BENEFICIARIES: 3,200+</span>
+              <span class="text-amber-700 font-bold">ANNUAL</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= NOTICES & AGM 2026 HUB ================= -->
+    <section id="notices" class="py-16 relative z-10 border-t border-slate-200 bg-white/70">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          <!-- Notices List -->
+          <div class="lg:col-span-7 bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm">
+            <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-bullhorn text-emerald-600"></i>
+                <h3 class="text-lg font-bold text-slate-900 font-bn">নোটিশ ও প্রশাসনিক সার্কুলার</h3>
+              </div>
+              <span class="text-xs font-mono text-slate-500 font-medium">OFFICIAL DISPATCH</span>
+            </div>
+
+            <div id="noticeListContainer" class="space-y-3 mt-4 font-bn text-xs">
+              <!-- Notices rendered by JS -->
+            </div>
+          </div>
+
+          <!-- AGM Spotlight Pass -->
+          <div class="lg:col-span-5 bg-gradient-to-br from-amber-50 to-orange-50/50 p-6 sm:p-8 rounded-2xl border border-amber-200 shadow-sm relative overflow-hidden">
+            <span class="px-3 py-1 rounded-full bg-amber-200/60 text-amber-900 font-mono text-[10px] font-bold border border-amber-300 uppercase tracking-wider">
+              ANNUAL GALA & AGM 2026
+            </span>
+
+            <h3 class="text-xl font-black text-slate-900 font-bn mt-3">
+              বার্ষিক সাধারণ সভা (AGM) ও মিলনমেলা
+            </h3>
+            <p class="text-xs text-slate-700 font-bn mt-2 leading-relaxed">
+              স্থান: সুন্দরবন ইকো পার্ক ও অফিসার্স ক্লাব অডিটোরিয়াম। পরিবারবর্গসহ সাতক্ষীরার সমৃদ্ধ লোকজ সংস্কৃতি ও সান্ধ্যকালীন সুরের আসরে যোগ দিন।
+            </p>
+
+            <div class="mt-4 p-3.5 rounded-xl bg-white border border-amber-200/80 font-mono text-xs space-y-2 text-slate-700 shadow-xs">
+              <div class="flex justify-between"><span>DATE:</span><span class="text-slate-900 font-bold">15 NOV 2026</span></div>
+              <div class="flex justify-between"><span>REPORTING:</span><span class="text-emerald-700 font-semibold">09:00 AM</span></div>
+              <div class="flex justify-between"><span>VENUE:</span><span class="text-slate-900 font-bn font-semibold">সুন্দরবন ইকো পার্ক, সাতক্ষীরা</span></div>
+            </div>
+
+            <div class="mt-6 flex items-center justify-between">
+              <div>
+                <span class="text-[10px] font-mono text-slate-500">DELEGATE PASS:</span>
+                <p class="text-base font-bold text-amber-700 font-mono">৳1,500 - ৳3,500</p>
+              </div>
+              <button onclick="openModal('ticketModal')" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-bold text-xs shadow-md shadow-amber-600/20 transition-all flex items-center gap-1.5">
+                <i class="fa-solid fa-qrcode"></i> ডিজিটাল পাস বুকিং
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= EMERGENCY BLOOD DONATION NETWORK ================= -->
+    <section id="blood" class="py-14 relative z-10 border-t border-slate-200 bg-rose-50/50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white p-6 sm:p-8 rounded-2xl border border-rose-200 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
+          <div class="flex items-center gap-4">
+            <div class="w-14 h-14 rounded-2xl bg-rose-100 border border-rose-200 text-rose-600 flex items-center justify-center text-2xl shrink-0 shadow-sm">
+              <i class="fa-solid fa-hand-holding-droplet"></i>
+            </div>
+            <div>
+              <span class="text-[10px] font-mono uppercase tracking-widest text-rose-800 font-bold">LIFE SUPPORT NETWORK</span>
+              <h3 class="text-xl font-bold text-slate-900 font-bn">জরুরি ব্লাড ব্যাংক ও কর্মকর্তা ডোনার সেল</h3>
+              <p class="text-xs text-slate-600 font-bn mt-0.5">সাতক্ষীরা জেলার যে কোনো মুমূর্ষু রোগীর প্রয়োজনে কর্মকর্তা ও তরুণ স্বেচ্ছাসেবকদের সাথে তাৎক্ষণিক রক্তদান সমন্বয়</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <button onclick="openBloodFilter()" class="px-5 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs shadow-md shadow-rose-600/20 transition-all flex items-center gap-2">
+              <i class="fa-solid fa-magnifying-glass"></i> ডোনার তালিকা খুঁজুন
+            </button>
+            <button onclick="showToast('জরুরি রক্তের হটলাইন: +880 1711-000000 ২৪/৭ সচল।')" class="px-4 py-2.5 rounded-xl bg-white text-slate-700 text-xs font-mono border border-slate-300 hover:bg-slate-50 shadow-sm">
+              হটলাইন: 24/7
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= MASTER FOOTER ================= -->
+  <footer class="relative z-10 border-t border-slate-200 bg-slate-900 text-slate-300 py-12 text-xs font-bn">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        
+        <!-- Organization Summary -->
+        <div class="space-y-3">
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-lg bg-emerald-500 flex items-center justify-center text-slate-950 font-black font-outfit text-sm">
+              SOF
+            </div>
+            <span class="text-white font-bold text-sm">সাতক্ষীরা অফিসার্স ফোরাম</span>
+          </div>
+          <p class="text-slate-400 text-xs leading-relaxed">
+            সাতক্ষীরা জেলার সরকারি, আধাসরকারি ও স্বায়ত্তশাসিত প্রতিষ্ঠানে কর্মরত ১ম শ্রেণির ক্যাডার ও কর্মকর্তাদের সমন্বয়ে গঠিত সামাজিক ঐক্যমঞ্চ।
+          </p>
+          <p class="text-[11px] font-mono text-emerald-400 font-semibold">OFFICIAL PORTAL: WWW.SOFBD.ORG</p>
+        </div>
+
+        <!-- Navigation Links -->
+        <div>
+          <h4 class="text-white font-bold text-xs uppercase tracking-wider font-mono mb-3">NAVIGATION</h4>
+          <ul class="space-y-1.5 text-slate-400">
+            <li><a href="#hero" class="hover:text-emerald-400 transition-colors">হোম ও পরিচিতি</a></li>
+            <li><a href="#matrix" class="hover:text-emerald-400 transition-colors">৭টি উপজেলা নেটওয়ার্ক</a></li>
+            <li><a href="#leadership" class="hover:text-emerald-400 transition-colors">কার্যনির্বাহী পরিষদ ২০২৫-২৭</a></li>
+            <li><a href="#directory" class="hover:text-emerald-400 transition-colors">কর্মকর্তা ডিরেক্টরি</a></li>
+            <li><a href="#initiatives" class="hover:text-emerald-400 transition-colors">সুন্দরবন উপকূল উন্নয়ন প্রকল্প</a></li>
+          </ul>
+        </div>
+
+        <!-- Liaison Offices -->
+        <div>
+          <h4 class="text-white font-bold text-xs uppercase tracking-wider font-mono mb-3">SECRETARIAT & CONTACT</h4>
+          <p class="text-slate-200 font-semibold mb-1">ঢাকা কেন্দ্রীয় লিয়াজোঁ:</p>
+          <p class="text-slate-400 text-[11px] mb-2">সেক্টর ৪, উত্তরা মডেল টাউন, ঢাকা-১২৩০।</p>
+          <p class="text-slate-200 font-semibold mb-1">সাতক্ষীরা ক্যাম্প অফিস:</p>
+          <p class="text-slate-400 text-[11px]">সাতক্ষীরা অফিসার্স ক্লাব ভবন (২য় তলা), নিউ মার্কেট রোড।</p>
+        </div>
+
+        <!-- Admin Control Shortcut -->
+        <div class="space-y-3 font-mono">
+          <h4 class="text-white font-bold text-xs uppercase tracking-wider">ADMINISTRATION</h4>
+          <p class="text-[11px] text-slate-400 font-bn">ওয়েবসাইটের লোগো, তথ্য, রঙ ও কর্মকর্তা ডিরেক্টরি কোড ছাড়া আপডেট করতে অ্যাডমিন প্যানেলে প্রবেশ করুন:</p>
+          <button onclick="openAdminPanelAuth()" class="w-full py-2.5 rounded-xl bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 hover:bg-emerald-500/30 text-xs font-bold transition-all flex items-center justify-center gap-2">
+            <i class="fa-solid fa-sliders"></i> অ্যাডমিন কন্ট্রোল প্যানেল (Alt+A)
+          </button>
+          <div class="flex items-center justify-between text-[10px] text-slate-500">
+            <span>PIN: 2026 (Demo)</span>
+            <button onclick="resetCMSDefaults()" class="hover:text-rose-400 underline">Reset Defaults</button>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-8 pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-slate-500 font-mono">
+        <p>&copy; 2026 SATKHIRA OFFICERS FORUM (SOFBD.ORG). ALL RIGHTS RESERVED.</p>
+        <p>EXECUTIVE EDITION &bull; HOSTED AT WWW.SOFBD.ORG</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= FLOATING ACTION: ADMIN & CMS SHORTCUT ================= -->
+  <div class="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-2">
+    <!-- Click to edit indicator badge -->
+    <div id="inlineEditBadge" class="hidden px-3.5 py-1.5 rounded-full bg-cyan-600 text-white text-[11px] font-mono font-bold shadow-lg animate-bounce flex items-center gap-1.5">
+      <i class="fa-solid fa-pen-nib"></i> Inline Edit Mode Active
+    </div>
+
+    <!-- Main Studio Button -->
+    <button onclick="openAdminPanelAuth()" class="group relative px-4 py-3 rounded-2xl bg-white hover:bg-slate-50 text-slate-900 font-bold text-xs border border-slate-300 shadow-xl flex items-center gap-2.5 transition-all duration-300 hover:scale-105">
+      <div class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></div>
+      <span class="font-mono tracking-tight font-bold">ADMIN STUDIO</span>
+      <span class="text-[9px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 font-mono font-bold">ALT+A</span>
+    </button>
+  </div>
+
+  <!-- ================= MASTER ADMIN & EDITOR DRAWER (ZERO CODE) ================= -->
+  <aside id="adminDrawer" class="fixed top-0 right-0 h-full w-full sm:w-[500px] bg-white border-l border-slate-200 z-50 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col shadow-2xl overflow-hidden font-bn text-xs">
+    
+    <!-- Drawer Header -->
+    <div class="p-4 sm:p-5 border-b border-slate-200 bg-slate-50 flex items-center justify-between shrink-0">
+      <div class="flex items-center gap-2.5">
+        <div class="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center font-bold">
+          <i class="fa-solid fa-sliders"></i>
+        </div>
+        <div>
+          <h3 class="text-sm font-bold text-slate-900 font-mono uppercase">SOFBD.ORG CONTROL PANEL</h3>
+          <p class="text-[11px] text-slate-500 font-sans">রিয়েল-টাইম কনটেন্ট, লোগো ও থিম অ্যাডমিন প্যানেল</p>
+        </div>
+      </div>
+      <button onclick="toggleAdminDrawer(false)" class="w-8 h-8 rounded-lg bg-slate-200/70 hover:bg-slate-200 text-slate-600 hover:text-slate-900 flex items-center justify-center">
+        <i class="fa-solid fa-xmark text-sm"></i>
+      </button>
+    </div>
+
+    <!-- CMS Navigation Tabs -->
+    <div class="flex border-b border-slate-200 bg-slate-100 text-[11px] font-mono shrink-0 overflow-x-auto">
+      <button onclick="switchAdminTab('tabBranding', this)" class="admin-tab-btn active flex-1 py-2.5 px-3 border-b-2 border-emerald-600 text-emerald-800 font-bold whitespace-nowrap bg-white">Branding</button>
+      <button onclick="switchAdminTab('tabContent', this)" class="admin-tab-btn flex-1 py-2.5 px-3 border-b-2 border-transparent text-slate-600 hover:text-slate-900 whitespace-nowrap">Hero & Text</button>
+      <button onclick="switchAdminTab('tabMembers', this)" class="admin-tab-btn flex-1 py-2.5 px-3 border-b-2 border-transparent text-slate-600 hover:text-slate-900 whitespace-nowrap">Members DB</button>
+      <button onclick="switchAdminTab('tabTheme', this)" class="admin-tab-btn flex-1 py-2.5 px-3 border-b-2 border-transparent text-slate-600 hover:text-slate-900 whitespace-nowrap">Light Theme</button>
+      <button onclick="switchAdminTab('tabSync', this)" class="admin-tab-btn flex-1 py-2.5 px-3 border-b-2 border-transparent text-slate-600 hover:text-slate-900 whitespace-nowrap">Deploy/Sync</button>
+    </div>
+
+    <!-- CMS Scrollable Settings Content -->
+    <div class="flex-grow overflow-y-auto p-5 space-y-5 bg-white">
+      
+      <!-- TAB 1: BRANDING & LOGO -->
+      <div id="tabBranding" class="admin-tab-content space-y-4">
+        <div class="p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs">
+          <i class="fa-solid fa-circle-check text-emerald-600"></i> আপনার সংস্থার লোগো সরাসরি আপলোড করুন বা লিংক দিন। এটি সরাসরি হেডার ও ফুটারে আপডেট হবে।
+        </div>
+
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">লোগো ছবি ফাইল আপলোড (Direct File Upload)</label>
+          <input type="file" id="cmsLogoFileInput" onchange="handleLogoUpload(event)" accept="image/*" class="w-full text-slate-600 file:mr-2 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:bg-emerald-600 file:text-white file:font-bold file:text-xs file:cursor-pointer border border-slate-200 rounded-xl p-1">
+        </div>
+
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">অথবা লোগো ইমেজ URL (Web Link)</label>
+          <input type="text" id="cmsLogoUrlInput" oninput="liveUpdateBrand()" placeholder="https://example.com/logo.png" class="w-full px-3 py-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 focus:outline-none focus:border-emerald-500 font-mono text-xs">
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">ইংরেজি নাম (Site Title EN)</label>
+            <input type="text" id="cmsTitleEnInput" oninput="liveUpdateBrand()" class="w-full px-3 py-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 font-medium">
+          </div>
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">সংক্ষিপ্ত নাম (Acronym)</label>
+            <input type="text" id="cmsAcronymInput" oninput="liveUpdateBrand()" class="w-full px-3 py-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 font-mono">
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">বাংলা নাম (Site Title BN)</label>
+          <input type="text" id="cmsTitleBnInput" oninput="liveUpdateBrand()" class="w-full px-3 py-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 font-bn">
+        </div>
+
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">ওয়েব ডোমেইন / ট্যাগলাইন (Domain Tagline)</label>
+          <input type="text" id="cmsTaglineInput" oninput="liveUpdateBrand()" class="w-full px-3 py-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 font-mono">
+        </div>
+      </div>
+
+      <!-- TAB 2: CONTENT & INLINE EDITING -->
+      <div id="tabContent" class="admin-tab-content hidden space-y-4">
+        
+        <!-- Click to edit toggle button -->
+        <div class="p-4 rounded-xl bg-slate-50 border border-cyan-200">
+          <div class="flex items-center justify-between mb-1.5">
+            <span class="font-bold text-cyan-800 font-mono text-xs">VISUAL INLINE EDIT MODE</span>
+            <input type="checkbox" id="inlineEditSwitch" onchange="toggleInlineEditMode(this.checked)" class="w-4 h-4 accent-cyan-600">
+          </div>
+          <p class="text-[11px] text-slate-600 font-bn leading-relaxed">
+            এটি চালু করলে আপনি সরাসরি ওয়েবসাইটের যেকোনো লেখা বা টাইটেলে ক্লিক করে টাইপ করে পরিবর্তন করতে পারবেন।
+          </p>
+        </div>
+
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">টপ নোটিশ বার টেক্সট (Notice Ticker)</label>
+          <textarea id="cmsTickerInput" oninput="liveUpdateTexts()" rows="2" class="w-full px-3 py-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 font-bn"></textarea>
+        </div>
+
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">হিরো টাইটেল হাইলাইট (Hero Highlight)</label>
+          <input type="text" id="cmsHeroHighlightInput" oninput="liveUpdateTexts()" class="w-full px-3 py-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 font-bn">
+        </div>
+
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">হিরো বর্ণনা (Hero Description)</label>
+          <textarea id="cmsHeroDescInput" oninput="liveUpdateTexts()" rows="3" class="w-full px-3 py-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 font-bn"></textarea>
+        </div>
+
+        <!-- Metrics Stats Counters -->
+        <div class="grid grid-cols-2 gap-3 pt-2">
+          <div>
+            <label class="block font-bold text-slate-700 mb-1 font-mono text-[11px]">মোট সদস্য (Stats)</label>
+            <input type="text" id="cmsStatMembersInput" oninput="liveUpdateTexts()" class="w-full px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 font-mono">
+          </div>
+          <div>
+            <label class="block font-bold text-slate-700 mb-1 font-mono text-[11px]">আজীবন সদস্য (Stats)</label>
+            <input type="text" id="cmsStatLifeInput" oninput="liveUpdateTexts()" class="w-full px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 font-mono">
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-bold text-slate-700 mb-1 font-bn">সভাপতির বাণী উক্তি (President's Quote)</label>
+          <textarea id="cmsPresQuoteInput" oninput="liveUpdateTexts()" rows="2" class="w-full px-3 py-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 font-bn"></textarea>
+        </div>
+      </div>
+
+      <!-- TAB 3: MEMBERS DATABASE MANAGEMENT -->
+      <div id="tabMembers" class="admin-tab-content hidden space-y-4">
+        <div class="flex items-center justify-between pb-2 border-b border-slate-200">
+          <div>
+            <h4 class="font-bold text-slate-800">কর্মকর্তা তালিকা পরিচালনা</h4>
+            <p class="text-[11px] text-slate-500">মোট কর্মকর্তা: <span id="adminTotalMembersCount">0</span> জন</p>
+          </div>
+          <button onclick="openAddMemberModal()" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs flex items-center gap-1 shadow-sm">
+            <i class="fa-solid fa-plus"></i> নতুন কর্মকর্তা
+          </button>
+        </div>
+
+        <!-- Admin Mini Members List with Delete option -->
+        <div id="adminMembersListTable" class="space-y-2 max-h-80 overflow-y-auto pr-1">
+          <!-- Injected via JS -->
+        </div>
+      </div>
+
+      <!-- TAB 4: LIGHT THEME & COLOR PRESETS -->
+      <div id="tabTheme" class="admin-tab-content hidden space-y-4">
+        <div>
+          <label class="block font-bold text-slate-700 mb-1.5 font-mono">CURATED LIGHT THEMES</label>
+          <div class="grid grid-cols-2 gap-2">
+            <button onclick="applyPresetTheme('arctic')" class="p-2.5 rounded-xl bg-slate-50 border border-emerald-300 text-emerald-800 font-sans text-left text-xs font-semibold hover:border-emerald-500 shadow-xs">
+              🌿 Emerald Coast (Default)
+            </button>
+            <button onclick="applyPresetTheme('cyan')" class="p-2.5 rounded-xl bg-slate-50 border border-cyan-300 text-cyan-800 font-sans text-left text-xs font-semibold hover:border-cyan-500 shadow-xs">
+              🌊 Coastal Cyan Light
+            </button>
+            <button onclick="applyPresetTheme('executive')" class="p-2.5 rounded-xl bg-slate-50 border border-amber-300 text-amber-800 font-sans text-left text-xs font-semibold hover:border-amber-500 shadow-xs">
+              🏛️ Executive Warm Amber
+            </button>
+            <button onclick="applyPresetTheme('navy')" class="p-2.5 rounded-xl bg-slate-50 border border-indigo-300 text-indigo-800 font-sans text-left text-xs font-semibold hover:border-indigo-500 shadow-xs">
+              ⚓ Sundarbans Marine Navy
+            </button>
+          </div>
+        </div>
+
+        <!-- Color pickers -->
+        <div class="grid grid-cols-2 gap-3 pt-2">
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">Primary Color (Hex)</label>
+            <div class="flex items-center gap-2">
+              <input type="color" id="cmsPrimaryColorPicker" oninput="updateCustomTheme()" class="w-8 h-8 rounded border-0 cursor-pointer bg-transparent">
+              <input type="text" id="cmsPrimaryColorText" class="w-full px-2 py-1.5 rounded-lg bg-slate-50 border border-slate-200 text-slate-800 font-mono text-xs">
+            </div>
+          </div>
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">Secondary Accent</label>
+            <div class="flex items-center gap-2">
+              <input type="color" id="cmsSecondaryColorPicker" oninput="updateCustomTheme()" class="w-8 h-8 rounded border-0 cursor-pointer bg-transparent">
+              <input type="text" id="cmsSecondaryColorText" class="w-full px-2 py-1.5 rounded-lg bg-slate-50 border border-slate-200 text-slate-800 font-mono text-xs">
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">টাইপোগ্রাফি ও ফন্ট (Typography)</label>
+          <select id="cmsFontSelect" onchange="changeFontFamily(this.value)" class="w-full px-3 py-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-800 font-sans">
+            <option value="Plus Jakarta Sans">Executive Modern (Plus Jakarta Sans)</option>
+            <option value="Inter">Clean Precision (Inter)</option>
+            <option value="Outfit">Futuristic Geometric (Outfit)</option>
+            <option value="Hind Siliguri">Native Bengali (Hind Siliguri)</option>
+          </select>
+        </div>
+
+        <div class="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-200">
+          <div>
+            <span class="font-bold text-slate-800">Light Particle Animation</span>
+            <p class="text-[10px] text-slate-500">ব্যাকগ্রাউন্ড লাইট মেশ পার্টিকেল চালু/বন্ধ</p>
+          </div>
+          <input type="checkbox" id="cmsParticleToggle" onchange="toggleParticleCanvas(this.checked)" checked class="w-4 h-4 accent-emerald-600">
+        </div>
+      </div>
+
+      <!-- TAB 5: DEPLOYMENT, BACKUP & SYNC -->
+      <div id="tabSync" class="admin-tab-content hidden space-y-4 font-mono">
+        <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 font-bn text-xs leading-relaxed">
+          আপনার সংরক্ষিত পরিবর্তন ব্রাউজারে স্থায়ী থাকে। আপনি এই পুরো সাইটটিকে <strong>www.sofbd.org</strong> তে হোস্ট করার পর আপনার টিমের মধ্যে ব্যাকআপ ফাইল শেয়ার করতে পারেন।
+        </div>
+
+        <button onclick="exportSiteConfig()" class="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold flex items-center justify-center gap-2 shadow-sm font-sans">
+          <i class="fa-solid fa-file-arrow-down"></i> EXPORT DATABASE (JSON)
+        </button>
+
+        <div>
+          <label class="block font-bold text-slate-700 mb-1 font-bn font-sans">ব্যাকআপ রিস্টোর (Import JSON)</label>
+          <input type="file" id="importJsonFileInput" onchange="importSiteConfig(event)" accept=".json" class="w-full text-slate-600 file:mr-2 file:py-1 file:px-3 file:rounded-lg file:border-0 file:bg-slate-200 file:text-slate-800 file:font-bold file:text-xs file:cursor-pointer border border-slate-200 rounded-xl p-1">
+        </div>
+
+        <div class="pt-3 border-t border-slate-200">
+          <button onclick="resetCMSDefaults()" class="w-full py-2 rounded-xl border border-rose-300 text-rose-700 hover:bg-rose-50 font-bold font-sans">
+            RESET ALL TO FACTORY DEFAULTS
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Drawer Footer Actions -->
+    <div class="p-4 border-t border-slate-200 bg-slate-50 flex items-center justify-between shrink-0 font-sans">
+      <span class="text-[11px] text-emerald-700 font-mono font-bold flex items-center gap-1">
+        <i class="fa-solid fa-cloud-arrow-up"></i> AUTO-SAVED
+      </span>
+      <button onclick="toggleAdminDrawer(false)" class="px-5 py-2 rounded-xl bg-slate-900 text-white font-bold text-xs hover:bg-slate-800">
+        প্যানেল বন্ধ করুন
+      </button>
+    </div>
+
+  </aside>
+
+  <!-- ================= POPUP MODALS ================= -->
+
+  <!-- 1. ADMIN PIN AUTH MODAL -->
+  <div id="adminAuthModal" class="fixed inset-0 bg-slate-900/40 z-50 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white border border-slate-200 rounded-3xl w-full max-w-sm shadow-2xl font-bn overflow-hidden">
+      <div class="p-5 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center">
+            <i class="fa-solid fa-lock"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-slate-900 text-sm">অ্যাডমিন প্রবেশাধিকার</h4>
+            <p class="text-[10px] text-slate-500 font-mono">SOFBD.ORG SECURITY CHECK</p>
+          </div>
+        </div>
+        <button onclick="closeModal('adminAuthModal')" class="text-slate-400 hover:text-slate-700">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <form onsubmit="handleAdminAuth(event)" class="p-6 space-y-4">
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-1.5">অ্যাডমিন সিক্রেট পিন (Default: 2026)</label>
+          <input type="password" id="adminPinInput" required placeholder="••••" maxlength="8" class="w-full text-center tracking-widest text-lg font-mono py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-emerald-600 bg-slate-50">
+        </div>
+        <button type="submit" class="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-md shadow-emerald-600/20">
+          প্রবেশ করুন (Unlock Studio)
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 2. MEMBERSHIP APPLICATION MODAL (MULTI-STEP) -->
+  <div id="applyModal" class="fixed inset-0 bg-slate-900/50 z-50 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white border border-slate-200 rounded-3xl w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl font-bn">
+      
+      <div class="p-5 border-b border-slate-200 bg-gradient-to-r from-emerald-700 to-teal-800 flex items-center justify-between text-white rounded-t-3xl">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-lg bg-white text-emerald-800 flex items-center justify-center font-bold">
+            <i class="fa-solid fa-id-card"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-sm sm:text-base">অনলাইন সদস্যপদ আবেদন ফরম</h3>
+            <p class="text-[10px] text-emerald-100 font-mono">SATKHIRA OFFICERS FORUM MEMBERSHIP APPLICATION</p>
+          </div>
+        </div>
+        <button onclick="closeModal('applyModal')" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <form onsubmit="handleApplySubmit(event)" class="p-6 space-y-4 text-xs">
+        
+        <div class="p-3.5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-900 text-xs leading-relaxed">
+          <strong>যোগ্যতা:</strong> আবেদনকারীকে অবশ্যই সাতক্ষীরা জেলার স্থায়ী বাসিন্দা হতে হবে এবং সরকার, বিচার বিভাগ, স্বায়ত্তশাসিত বা প্রথম শ্রেণির সংবিধিবদ্ধ কর্মকর্তা হতে হবে।
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1">পূর্ণ নাম (বাংলায়) *</label>
+            <input type="text" required placeholder="উদাঃ মোঃ আসাদুজ্জামান" class="w-full px-3 py-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 focus:outline-none focus:border-emerald-600">
+          </div>
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1">Full Name (English) *</label>
+            <input type="text" required placeholder="e.g. Md. Asaduzzaman" class="w-full px-3 py-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 focus:outline-none focus:border-emerald-600">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1">সার্ভিস / ক্যাডার *</label>
+            <select required class="w-full px-3 py-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 focus:outline-none focus:border-emerald-600 font-bn">
+              <option value="">ক্যাডার নির্বাচন করুন</option>
+              <option value="বিসিএস (প্রশাসন)">বিসিএস (প্রশাসন)</option>
+              <option value="বিসিএস (পুলিশ)">বিসিএস (পুলিশ)</option>
+              <option value="বিসিএস (স্বাস্থ্য)">বিসিএস (স্বাস্থ্য)</option>
+              <option value="বিসিএস (শিক্ষা)">বিসিএস (শিক্ষা)</option>
+              <option value="বিসিএস (কর / শুল্ক)">বিসিএস (কর / শুল্ক)</option>
+              <option value="বাংলাদেশ জুডিশিয়াল সার্ভিস">বাংলাদেশ জুডিশিয়াল সার্ভিস (BJS)</option>
+              <option value="বাংলাদেশ সশস্ত্র বাহিনী">বাংলাদেশ সশস্ত্র বাহিনী (সেনা/নৌ/বিমান)</option>
+              <option value="ব্যাংকিং ও আর্থিক প্রতিষ্ঠান">ব্যাংকিং ও আর্থিক প্রতিষ্ঠান</option>
+              <option value="অন্যান্য ১ম শ্রেণি">অন্যান্য ১ম শ্রেণির সংবিধিবদ্ধ কর্মকর্তা</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1">বর্তমান পদবী ও কর্মস্থল *</label>
+            <input type="text" required placeholder="উদাঃ উপসচিব, জনপ্রশাসন মন্ত্রণালয়" class="w-full px-3 py-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 focus:outline-none focus:border-emerald-600">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1">নিজ উপজেলা *</label>
+            <select required class="w-full px-3 py-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 focus:outline-none focus:border-emerald-600 font-bn">
+              <option value="">উপজেলা</option>
+              <option value="সাতক্ষীরা সদর">সাতক্ষীরা সদর</option>
+              <option value="শ্যামনগর">শ্যামনগর</option>
+              <option value="কালীগঞ্জ">কালীগঞ্জ</option>
+              <option value="তালা">তালা</option>
+              <option value="কলারোয়া">কলারোয়া</option>
+              <option value="দেবহাটা">দেবহাটা</option>
+              <option value="আশাশুনি">আশাশুনি</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1">মোবাইল নম্বর *</label>
+            <input type="tel" required placeholder="০১৭১১-XXXXXX" class="w-full px-3 py-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 focus:outline-none focus:border-emerald-600 font-mono">
+          </div>
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1">রক্তের গ্রুপ *</label>
+            <select required class="w-full px-3 py-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 focus:outline-none focus:border-emerald-600 font-mono">
+              <option value="">রক্তের গ্রুপ</option>
+              <option value="A+">A+ (পজিটিভ)</option>
+              <option value="A-">A- (নেগেটিভ)</option>
+              <option value="B+">B+ (পজিটিভ)</option>
+              <option value="B-">B- (নেগেটিভ)</option>
+              <option value="O+">O+ (পজিটিভ)</option>
+              <option value="O-">O- (নেগেটিভ)</option>
+              <option value="AB+">AB+ (পজিটিভ)</option>
+              <option value="AB-">AB- (নেগেটিভ)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1">সদস্যপদের ধরন *</label>
+            <select required class="w-full px-3 py-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 focus:outline-none focus:border-emerald-600 font-bn">
+              <option value="আজীবন সদস্য">আজীবন সদস্য (এককালীন ১০,০০০ টাকা)</option>
+              <option value="সাধারণ সদস্য">সাধারণ সদস্য (বার্ষিক ১,৫০০ টাকা)</option>
+              <option value="দাতা সদস্য">দাতা সদস্য (এককালীন ৫০,০০০ টাকা)</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1">পাসপোর্ট সাইজ ছবি</label>
+            <input type="file" accept="image/*" class="w-full text-slate-600 file:mr-2 file:py-1 file:px-3 file:rounded-lg file:border-0 file:bg-slate-200 file:text-slate-800 file:text-xs">
+          </div>
+        </div>
+
+        <div class="pt-4 border-t border-slate-200 flex items-center justify-end gap-3">
+          <button type="button" onclick="closeModal('applyModal')" class="px-4 py-2 rounded-xl border border-slate-300 text-slate-700 hover:bg-slate-50 font-semibold">বাতিল</button>
+          <button type="submit" class="px-6 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold shadow-md shadow-emerald-600/20">আবেদন সাবমিট করুন</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 3. AGM 2026 DIGITAL PASS TICKET MODAL -->
+  <div id="ticketModal" class="fixed inset-0 bg-slate-900/50 z-50 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white border border-amber-300 rounded-3xl w-full max-w-lg shadow-2xl font-bn overflow-hidden">
+      
+      <div class="p-5 bg-gradient-to-r from-amber-600 to-amber-700 border-b border-amber-400 flex items-center justify-between text-white">
+        <div class="flex items-center gap-2.5">
+          <i class="fa-solid fa-qrcode text-amber-200 text-lg"></i>
+          <div>
+            <h3 class="font-bold text-base">এজিএম ২০২৬ ডিজিটাল টিকিট ও প্রবেশপত্র</h3>
+            <p class="text-[10px] text-amber-100 font-mono">SATKHIRA OFFICERS FORUM AGM ENTRY PASS</p>
+          </div>
+        </div>
+        <button onclick="closeModal('ticketModal')" class="text-white/80 hover:text-white">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <div class="p-6 space-y-4 text-xs">
+        
+        <!-- Live Ticket Card Slip -->
+        <div id="ticketCardDisplay" class="p-4 rounded-2xl bg-amber-50 border border-amber-300 relative font-mono text-slate-800 shadow-sm">
+          <div class="flex justify-between items-start border-b border-amber-200 pb-2">
+            <div>
+              <span class="text-[9px] text-amber-800 uppercase tracking-widest block font-bold">ENTRY PASS # SOF-AGM26-889</span>
+              <h4 class="text-slate-900 font-bold text-sm font-bn">বার্ষিক সাধারণ সভা ও মিলনমেলা ২০২৬</h4>
+            </div>
+            <div class="w-10 h-10 rounded-lg bg-white border border-amber-300 p-1 flex items-center justify-center text-slate-900 font-black text-[9px] text-center shadow-xs">
+              QR
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-2 mt-3 text-[11px]">
+            <div><span class="text-slate-500 block">DELEGATE:</span><strong class="text-slate-900 font-bn" id="ticketDelegateName">জনাব মোঃ আবু সাঈদ</strong></div>
+            <div><span class="text-slate-500 block">CATEGORY:</span><strong class="text-emerald-700" id="ticketCategoryDisplay">দম্পতি (COUPLE)</strong></div>
+            <div><span class="text-slate-500 block">DATE:</span><span class="text-slate-900">15 NOV 2026</span></div>
+            <div><span class="text-slate-500 block">VENUE:</span><span class="text-slate-900 font-bn">সুন্দরবন ইকো পার্ক</span></div>
+          </div>
+        </div>
+
+        <div class="space-y-3 pt-2">
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1">অফিসারের নাম *</label>
+            <input type="text" id="ticketInputName" oninput="document.getElementById('ticketDelegateName').innerText = this.value || 'প্রতিনিধি কর্মকর্তা'" placeholder="নাম লিখুন" class="w-full px-3 py-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-900">
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block font-semibold text-slate-700 mb-1">প্যাকেজ নির্বাচন</label>
+              <select id="ticketPackageSelect" onchange="updateTicketPackage(this.value)" class="w-full px-3 py-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 font-bn">
+                <option value="একক (SINGLE) - ৳১,৫০০">একক (SINGLE) - ৳১,৫০০</option>
+                <option value="দম্পতি (COUPLE) - ৳২,৫০০" selected>দম্পতি (COUPLE) - ৳২,৫০০</option>
+                <option value="ফ্যামিলি (FAMILY) - ৳৩,৫০০">ফ্যামিলি (FAMILY) - ৳৩,৫০০</option>
+              </select>
+            </div>
+            <div>
+              <label class="block font-semibold text-slate-700 mb-1">বিকাশ/নগদ TrxID *</label>
+              <input type="text" placeholder="e.g. 9J8A7K3L" class="w-full px-3 py-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 font-mono">
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-3 border-t border-slate-200 flex justify-end gap-2">
+          <button onclick="closeModal('ticketModal')" class="px-4 py-2 rounded-xl border border-slate-300 text-slate-700 font-semibold">বন্ধ করুন</button>
+          <button onclick="downloadTicketPdf()" class="px-5 py-2 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-bold shadow-md shadow-amber-600/20">
+            <i class="fa-solid fa-download"></i> টিকিট ডাউনলোড (PDF)
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. MEMBER DETAILS MODAL -->
+  <div id="memberDetailModal" class="fixed inset-0 bg-slate-900/50 z-50 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white border border-slate-200 rounded-3xl w-full max-w-lg shadow-2xl font-bn overflow-hidden">
+      <div id="memberModalContent">
+        <!-- Rendered via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. ADD CUSTOM MEMBER MODAL (ADMIN TOOL) -->
+  <div id="addMemberModal" class="fixed inset-0 bg-slate-900/50 z-50 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white border border-slate-200 rounded-3xl w-full max-w-lg shadow-2xl font-bn overflow-hidden">
+      <div class="p-4 bg-emerald-700 text-white flex items-center justify-between">
+        <h3 class="font-bold text-sm font-sans flex items-center gap-2">
+          <i class="fa-solid fa-user-plus"></i> নতুন কর্মকর্তা অন্তর্ভুক্ত করুন (Add Officer)
+        </h3>
+        <button onclick="closeModal('addMemberModal')" class="text-white/80 hover:text-white">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <form onsubmit="handleSaveCustomMember(event)" class="p-6 space-y-3 text-xs">
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">নাম (Officer Name) *</label>
+          <input type="text" id="newMemName" required placeholder="উদাঃ মোঃ শফিকুল ইসলাম" class="w-full px-3 py-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-900">
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1">ক্যাডার/সার্ভিস *</label>
+            <select id="newMemCadre" required class="w-full px-3 py-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 font-bn">
+              <option value="প্রশাসন">বিসিএস প্রশাসন</option>
+              <option value="পুলিশ">বিসিএস পুলিশ</option>
+              <option value="স্বাস্থ্য">বিসিএস স্বাস্থ্য</option>
+              <option value="শিক্ষা">বিসিএস শিক্ষা</option>
+              <option value="বিচার বিভাগ">জুডিশিয়াল সার্ভিস</option>
+              <option value="সশস্ত্র বাহিনী">প্রতিরক্ষা বাহিনী</option>
+              <option value="ট্যাক্স ও শুল্ক">কর ও শুল্ক</option>
+              <option value="ব্যাংকিং">ব্যাংক কর্মকর্তা</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1">নিজ উপজেলা *</label>
+            <select id="newMemUpazila" required class="w-full px-3 py-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 font-bn">
+              <option value="সাতক্ষীরা সদর">সাতক্ষীরা সদর</option>
+              <option value="শ্যামনগর">শ্যামনগর</option>
+              <option value="কালীগঞ্জ">কালীগঞ্জ</option>
+              <option value="তালা">তালা</option>
+              <option value="কলারোয়া">কলারোয়া</option>
+              <option value="দেবহাটা">দেবহাটা</option>
+              <option value="আশাশুনি">আশাশুনি</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1">পদবী ও দপ্তর *</label>
+            <input type="text" id="newMemDesignation" required placeholder="উদাঃ অতিরিক্ত জেলা প্রশাসক" class="w-full px-3 py-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-900">
+          </div>
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1">রক্তের গ্রুপ</label>
+            <input type="text" id="newMemBlood" placeholder="e.g. O+ (পজিটিভ)" class="w-full px-3 py-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 font-mono">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1">সদস্যপদ স্ট্যাটাস</label>
+            <select id="newMemType" class="w-full px-3 py-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 font-bn">
+              <option value="আজীবন সদস্য">আজীবন সদস্য</option>
+              <option value="সাধারণ সদস্য">সাধারণ সদস্য</option>
+              <option value="দাতা সদস্য">দাতা সদস্য</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1">ব্যাচ / পরিচিতি নম্বর</label>
+            <input type="text" id="newMemBatch" placeholder="উদাঃ ৩৪তম বিসিএস" class="w-full px-3 py-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 font-bn">
+          </div>
+        </div>
+
+        <div class="pt-4 border-t border-slate-200 flex justify-end gap-2">
+          <button type="button" onclick="closeModal('addMemberModal')" class="px-4 py-2 rounded-xl border border-slate-300 text-slate-700 font-semibold">বাতিল</button>
+          <button type="submit" class="px-5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold">সংরক্ষণ করুন</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 6. MEMBER LOGIN MODAL -->
+  <div id="loginModal" class="fixed inset-0 bg-slate-900/50 z-50 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white border border-slate-200 rounded-3xl w-full max-w-md shadow-2xl font-bn overflow-hidden">
+      <div class="p-5 bg-gradient-to-r from-cyan-700 to-slate-800 border-b border-cyan-800 flex items-center justify-between text-white">
+        <div class="flex items-center gap-2">
+          <i class="fa-solid fa-fingerprint text-cyan-200 text-lg"></i>
+          <div>
+            <h3 class="font-bold text-base">কর্মকর্তা সেন্ট্রাল পোর্টাল লগইন</h3>
+            <p class="text-[10px] text-cyan-100 font-mono">SATKHIRA OFFICERS FORUM AUTH</p>
+          </div>
+        </div>
+        <button onclick="closeModal('loginModal')" class="text-white/80 hover:text-white">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <form onsubmit="handleLoginSubmit(event)" class="p-6 space-y-4 text-xs">
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">অফিসার মেম্বার আইডি / মোবাইল নম্বর *</label>
+          <input type="text" required placeholder="SOF-LM-001 বা ০১৭১১-XXXXXX" class="w-full px-3 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 font-mono">
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">পাসওয়ার্ড *</label>
+          <input type="password" required placeholder="••••••••" class="w-full px-3 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-900">
+        </div>
+        <button type="submit" class="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-md shadow-emerald-600/20">
+          লগইন সম্পন্ন করুন
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION BOX -->
+  <div id="toastBox" class="fixed bottom-6 left-6 z-50 bg-slate-900 text-white px-5 py-3 rounded-2xl shadow-2xl border border-slate-700 flex items-center gap-3 font-bn text-xs transform -translate-y-10 opacity-0 pointer-events-none transition-all duration-300">
+    <i id="toastIcon" class="fa-solid fa-circle-check text-emerald-400 text-base"></i>
+    <span id="toastMsg">পরিবর্তন সফলভাবে সংরক্ষিত হয়েছে।</span>
+  </div>
+
+  <!-- ================= MASTER JAVASCRIPT ENGINE ================= -->
+  <script>
+    // ----------------------------------------------------
+    // 1. DEFAULT MASTER STATE (SATKHIRA OFFICERS FORUM)
+    // ----------------------------------------------------
+    const defaultSiteConfig = {
+      branding: {
+        logoUrl: "https://placehold.co/120x120/ffffff/059669?text=SOF",
+        titleEn: "Satkhira Officers Forum",
+        acronym: "SOF",
+        titleBn: "সাতক্ষীরা অফিসার্স ফোরাম",
+        tagline: "www.sofbd.org"
+      },
+      theme: {
+        preset: "arctic",
+        primaryColor: "#059669",
+        secondaryColor: "#0284c7",
+        fontFamily: "Plus Jakarta Sans",
+        particleActive: true
+      },
+      content: {
+        tickerText: "সাতক্ষীরা অফিসার্স ফোরাম: সুন্দরবন ইকো-পার্কে আগামী ১৫ নভেম্বর অনুষ্ঠিতব্য বার্ষিক মিলনমেলা ও সাধারণ সভায় সকল কর্মকর্তা সাদরে আমন্ত্রিত!",
+        heroBadgeText: "OFFICERS NETWORK OF SATKHIRA COAST",
+        heroTitleLine1: "ঐক্য, মেধা ও দূরদর্শিতায়",
+        heroTitleHighlight: "উপকূলের দীপ্ত প্রত্যয়",
+        heroDescription: "সাতক্ষীরা জেলার সর্বস্তরের সরকারি, বিচার বিভাগীয়, প্রতিরক্ষা, ব্যাংক ও সংবিধিবদ্ধ প্রতিষ্ঠানের শীর্ষ কর্মকর্তাদের বুদ্ধিবৃত্তিক ঐক্যমঞ্চ। সুন্দরবনের ঐতিহ্যকে হৃদয়ে ধারণ করে জনকল্যাণ ও জেলা ব্র্যান্ডিংয়ে আমাদের টেকসই প্রয়াস।",
+        statMembers: "380+",
+        statLife: "240+",
+        statUpazilas: "07",
+        statRelief: "৳1.8 Cr",
+        presHeroName: "জনাব মোঃ আসাদুজ্জামান, এনডিসি",
+        presHeroPost: "অতিরিক্ত সচিব (অব.), জনপ্রশাসন মন্ত্রণালয়",
+        presHeroQuote: "সাতক্ষীরার উপকূলীয় মেধা ও সততা আজ জাতীয় নীতিনির্ধারণে উজ্জ্বল ভূমিকা রাখছে। পারস্পরিক সৌহার্দ্য ও কল্যাণে আমরা ঐক্যবদ্ধ।",
+        gsHeroName: "ড. খোন্দকার আজিম আহমেদ (অধ্যাপক, ঢাবি)"
+      }
+    };
+
+    const upazilaData = [
+      { name: "সাতক্ষীরা সদর", members: 92, liaison: "আহবায়ক: এস. এম. শফিউল্লাহ", badge: "সদর হাব" },
+      { name: "শ্যামনগর", members: 54, liaison: "সমন্বয়ক: মোঃ রবিউল আলম, পিপিএম", badge: "সুন্দরবন উপকূল" },
+      { name: "কালীগঞ্জ", members: 62, liaison: "সমন্বয়ক: কাজী শফিকুল ইসলাম", badge: "ঐতিহাসিক জনপদ" },
+      { name: "তালা", members: 58, liaison: "সমন্বয়ক: ড. খোন্দকার আজিম আহমেদ", badge: "কপোতাক্ষ অববাহিকা" },
+      { name: "কলারোয়া", members: 46, liaison: "সমন্বয়ক: তানভীর হোসেন", badge: "সীমান্ত হাব" },
+      { name: "দেবহাটা", members: 38, liaison: "সমন্বয়ক: মোছাঃ সেলিনা সুলতানা", badge: "ইছামতি তীর" },
+      { name: "আশাশুনি", members: 42, liaison: "সমন্বয়ক: শেখ মোহাম্মদ মুস্তাক", badge: "প্রান্তিক উপকূল" }
+    ];
+
+    const committeeDataDefault = [
+      {
+        id: 1,
+        name: "জনাব মোঃ আসাদুজ্জামান, এনডিসি",
+        role: "সভাপতি",
+        category: "executive",
+        service: "বিসিএস (প্রশাসন)",
+        designation: "অতিরিক্ত সচিব (অব.)",
+        workplace: "জনপ্রশাসন মন্ত্রণালয়",
+        upazila: "সাতক্ষীরা সদর",
+        phone: "+880 1711-000001",
+        avatar: "https://placehold.co/150x150/ffffff/059669?text=President"
+      },
+      {
+        id: 2,
+        name: "ড. খোন্দকার আজিম আহমেদ",
+        role: "সাধারণ সম্পাদক",
+        category: "executive",
+        service: "বিসিএস (শিক্ষা)",
+        designation: "অধ্যাপক ও বিভাগীয় প্রধান",
+        workplace: "ঢাকা বিশ্ববিদ্যালয়",
+        upazila: "তালা",
+        phone: "+880 1711-000002",
+        avatar: "https://placehold.co/150x150/ffffff/0284c7?text=GS"
+      },
+      {
+        id: 3,
+        name: "জনাব কাজী শফিকুল ইসলাম",
+        role: "প্রধান উপদেষ্টা",
+        category: "advisor",
+        service: "প্রাক্তন সচিব",
+        designation: "সাবেক সচিব, স্থানীয় সরকার",
+        workplace: "এলজিইডি / মন্ত্রিপরিষদ বিভাগ",
+        upazila: "কালীগঞ্জ",
+        phone: "+880 1711-000003",
+        avatar: "https://placehold.co/150x150/ffffff/d97706?text=Advisor"
+      },
+      {
+        id: 4,
+        name: "মেজর জেনারেল (অব.) রফিকুল বারী",
+        role: "উপদেষ্টা",
+        category: "advisor",
+        service: "বাংলাদেশ সেনাবাহিনী",
+        designation: "সাবেক জিওসি",
+        workplace: "সেনাসদর",
+        upazila: "কলারোয়া",
+        phone: "+880 1711-000004",
+        avatar: "https://placehold.co/150x150/ffffff/4338ca?text=General"
+      },
+      {
+        id: 5,
+        name: "মোছাঃ সেলিনা সুলতানা",
+        role: "সহ-সভাপতি",
+        category: "executive",
+        service: "বিসিএস (প্রশাসন)",
+        designation: "যুগ্মসচিব",
+        workplace: "জননিরাপত্তা বিভাগ, স্বরাষ্ট্র মন্ত্রণালয়",
+        upazila: "দেবহাটা",
+        phone: "+880 1711-000005",
+        avatar: "https://placehold.co/150x150/ffffff/059669?text=VP"
+      },
+      {
+        id: 6,
+        name: "জনাব শেখ মোহাম্মদ মুস্তাক",
+        role: "কোষাধ্যক্ষ",
+        category: "executive",
+        service: "কেন্দ্রীয় ব্যাংক",
+        designation: "মহাব্যবস্থাপক (GM)",
+        workplace: "বাংলাদেশ ব্যাংক",
+        upazila: "আশাশুনি",
+        phone: "+880 1711-000006",
+        avatar: "https://placehold.co/150x150/ffffff/0284c7?text=Treasurer"
+      },
+      {
+        id: 7,
+        name: "জনাব মোঃ রবিউল আলম, পিপিএম",
+        role: "সাংগঠনিক সম্পাদক",
+        category: "executive",
+        service: "বিসিএস (পুলিশ)",
+        designation: "পুলিশ সুপার (এসপি)",
+        workplace: "পুলিশ হেডকোয়ার্টার্স",
+        upazila: "শ্যামনগর",
+        phone: "+880 1711-000007",
+        avatar: "https://placehold.co/150x150/ffffff/d97706?text=SP"
+      },
+      {
+        id: 8,
+        name: "ডাঃ ফাহমিদা সুলতানা",
+        role: "স্বাস্থ্য বিষয়ক সম্পাদক",
+        category: "executive",
+        service: "বিসিএস (স্বাস্থ্য)",
+        designation: "সহযোগী অধ্যাপক",
+        workplace: "বিএসএমএমইউ (পিজি হাসপাতাল)",
+        upazila: "সাতক্ষীরা সদর",
+        phone: "+880 1711-000008",
+        avatar: "https://placehold.co/150x150/ffffff/059669?text=Doctor"
+      }
+    ];
+
+    const directoryMembersDefault = [
+      {
+        id: 101,
+        name: "মোঃ আসাদুজ্জামান, এনডিসি",
+        cadre: "প্রশাসন",
+        cadreBadge: "বিসিএস প্রশাসন (১১তম)",
+        designation: "অতিরিক্ত সচিব (অব.)",
+        workplace: "জনপ্রশাসন মন্ত্রণালয়",
+        upazila: "সাতক্ষীরা সদর",
+        blood: "O+",
+        type: "আজীবন সদস্য",
+        memberCode: "SOF-LM-001",
+        email: "asad.sof@sofbd.org"
+      },
+      {
+        id: 102,
+        name: "ড. খোন্দকার আজিম আহমেদ",
+        cadre: "শিক্ষা",
+        cadreBadge: "বিসিএস শিক্ষা (১৪তম)",
+        designation: "অধ্যাপক ও চেয়ারম্যান",
+        workplace: "ঢাকা বিশ্ববিদ্যালয়",
+        upazila: "তালা",
+        blood: "A+",
+        type: "আজীবন সদস্য",
+        memberCode: "SOF-LM-002",
+        email: "azim.ahmed@sofbd.org"
+      },
+      {
+        id: 103,
+        name: "ডাঃ আশরাফুল আলম",
+        cadre: "স্বাস্থ্য",
+        cadreBadge: "বিসিএস স্বাস্থ্য (২৮তম)",
+        designation: "সহকারী অধ্যাপক (কার্ডিওলজি)",
+        workplace: "জাতীয় হৃদরোগ ইনস্টিটিউট",
+        upazila: "সাতক্ষীরা সদর",
+        blood: "B+",
+        type: "আজীবন সদস্য",
+        memberCode: "SOF-LM-014",
+        email: "ashraf.cardio@sofbd.org"
+      },
+      {
+        id: 104,
+        name: "ফারহানা ইয়াসমিন",
+        cadre: "বিচার বিভাগ",
+        cadreBadge: "বাংলাদেশ জুডিশিয়াল সার্ভিস (BJS)",
+        designation: "যুগ্ম জেলা ও দায়রা জজ",
+        workplace: "আইন ও বিচার বিভাগ",
+        upazila: "কালীগঞ্জ",
+        blood: "AB+",
+        type: "সাধারণ সদস্য",
+        memberCode: "SOF-GM-108",
+        email: "farhana.judge@sofbd.org"
+      },
+      {
+        id: 105,
+        name: "মোঃ রবিউল আলম, পিপিএম",
+        cadre: "পুলিশ",
+        cadreBadge: "বিসিএস পুলিশ (২৪তম)",
+        designation: "পুলিশ সুপার (এসপি)",
+        workplace: "বাংলাদেশ পুলিশ হেডকোয়ার্টার্স",
+        upazila: "শ্যামনগর",
+        blood: "O+",
+        type: "আজীবন সদস্য",
+        memberCode: "SOF-LM-022",
+        email: "rabiul.police@sofbd.org"
+      },
+      {
+        id: 106,
+        name: "শেখ মোহাম্মদ মুস্তাক",
+        cadre: "ব্যাংকিং",
+        cadreBadge: "বাংলাদেশ ব্যাংক কর্মকর্তা",
+        designation: "মহাব্যবস্থাপক (GM)",
+        workplace: "বাংলাদেশ ব্যাংক প্রধান কার্যালয়",
+        upazila: "আশাশুনি",
+        blood: "O-",
+        type: "আজীবন সদস্য",
+        memberCode: "SOF-LM-035",
+        email: "mustaq.bb@sofbd.org"
+      },
+      {
+        id: 107,
+        name: "লেফটেন্যান্ট কর্নেল তানভীর হোসেন",
+        cadre: "সশস্ত্র বাহিনী",
+        cadreBadge: "বাংলাদেশ সেনাবাহিনী",
+        designation: "লেফটেন্যান্ট কর্নেল",
+        workplace: "সেনাসদর, ঢাকা সেনানিবাস",
+        upazila: "কলারোয়া",
+        blood: "B+",
+        type: "দাতা সদস্য",
+        memberCode: "SOF-DM-003",
+        email: "tanvir.army@sofbd.org"
+      },
+      {
+        id: 108,
+        name: "মোছাঃ সেলিনা সুলতানা",
+        cadre: "প্রশাসন",
+        cadreBadge: "বিসিএস প্রশাসন (১৮তম)",
+        designation: "যুগ্মসচিব",
+        workplace: "স্বরাষ্ট্র মন্ত্রণালয়",
+        upazila: "দেবহাটা",
+        blood: "A+",
+        type: "আজীবন সদস্য",
+        memberCode: "SOF-LM-045",
+        email: "selina.mha@sofbd.org"
+      },
+      {
+        id: 109,
+        name: "মোঃ নাজমুল হক",
+        cadre: "প্রশাসন",
+        cadreBadge: "বিসিএস প্রশাসন (৩৪তম)",
+        designation: "উপজেলা নির্বাহী অফিসার (ইউএনও)",
+        workplace: "জনপ্রশাসন মন্ত্রণালয়",
+        upazila: "তালা",
+        blood: "O+",
+        type: "সাধারণ সদস্য",
+        memberCode: "SOF-GM-142",
+        email: "nazmul.uno@sofbd.org"
+      }
+    ];
+
+    const noticesData = [
+      {
+        id: 1,
+        date: "১৫ অক্টোবর ২০২৬",
+        title: "বার্ষিক সাধারণ সভা (AGM) ও মিলনমেলা ২০২৬ এর সাব-কমিটি গঠন প্রসঙ্গে",
+        file: "AGM-Notice-2026.pdf",
+        badge: "জরুরি"
+      },
+      {
+        id: 2,
+        date: "২৮ সেপ্টেম্বর ২০২৬",
+        title: "আজীবন সদস্যপদ আধুনিকায়ন ও স্মার্ট মেম্বারশিপ কার্ড বিতরণ বিজ্ঞপ্তি",
+        file: "Smart-Card-Notice.pdf",
+        badge: "সার্কুলার"
+      },
+      {
+        id: 3,
+        date: "১০ আগস্ট ২০২৬",
+        title: "সাতক্ষীরার কৃতি শিক্ষার্থীদের জন্য এসওএফ শিক্ষা অনুদান ও স্কলারশিপ আহ্বান",
+        file: "Scholarship-Form-2026.pdf",
+        badge: "শিক্ষা"
+      }
+    ];
+
+    // ----------------------------------------------------
+    // 2. STATE PERSISTENCE
+    // ----------------------------------------------------
+    let currentConfig = JSON.parse(localStorage.getItem('sof_light_config')) || defaultSiteConfig;
+    let directoryMembers = JSON.parse(localStorage.getItem('sof_light_members')) || directoryMembersDefault;
+    let committeeMembers = JSON.parse(localStorage.getItem('sof_light_committee')) || committeeDataDefault;
+    let isAdminUnlocked = false;
+
+    function saveState() {
+      localStorage.setItem('sof_light_config', JSON.stringify(currentConfig));
+      localStorage.setItem('sof_light_members', JSON.stringify(directoryMembers));
+      localStorage.setItem('sof_light_committee', JSON.stringify(committeeMembers));
+    }
+
+    // ----------------------------------------------------
+    // 3. APPLY CONFIG TO DOM
+    // ----------------------------------------------------
+    function applyConfigToDom() {
+      // Branding
+      const brand = currentConfig.branding;
+      document.getElementById('siteLogoImg').src = brand.logoUrl;
+      document.getElementById('siteTitleEn').innerText = brand.titleEn;
+      document.getElementById('siteAcronym').innerText = brand.acronym;
+      document.getElementById('siteTitleBn').innerText = brand.titleBn;
+      document.getElementById('siteTagline').innerText = brand.tagline;
+
+      // Theme Colors & CSS Variables
+      const theme = currentConfig.theme;
+      document.documentElement.style.setProperty('--sof-primary', theme.primaryColor);
+      document.documentElement.style.setProperty('--sof-secondary', theme.secondaryColor);
+      document.documentElement.style.setProperty('--sof-font', theme.fontFamily);
+
+      // Texts
+      const cnt = currentConfig.content;
+      document.getElementById('tickerText').innerText = cnt.tickerText;
+      document.getElementById('heroBadgeText').innerText = cnt.heroBadgeText;
+      document.getElementById('heroTitleLine1').innerText = cnt.heroTitleLine1;
+      document.getElementById('heroTitleHighlight').innerText = cnt.heroTitleHighlight;
+      document.getElementById('heroDescription').innerText = cnt.heroDescription;
+      document.getElementById('statMembers').innerText = cnt.statMembers;
+      document.getElementById('statLife').innerText = cnt.statLife;
+      document.getElementById('statUpazilas').innerText = cnt.statUpazilas;
+      document.getElementById('statRelief').innerText = cnt.statRelief;
+      document.getElementById('presHeroName').innerText = cnt.presHeroName;
+      document.getElementById('presHeroPost').innerText = cnt.presHeroPost;
+      document.getElementById('presHeroQuote').innerText = cnt.presHeroQuote;
+      document.getElementById('gsHeroName').innerText = cnt.gsHeroName;
+
+      // Sync Admin inputs if they exist
+      if (document.getElementById('cmsLogoUrlInput')) {
+        document.getElementById('cmsLogoUrlInput').value = brand.logoUrl;
+        document.getElementById('cmsTitleEnInput').value = brand.titleEn;
+        document.getElementById('cmsAcronymInput').value = brand.acronym;
+        document.getElementById('cmsTitleBnInput').value = brand.titleBn;
+        document.getElementById('cmsTaglineInput').value = brand.tagline;
+
+        document.getElementById('cmsPrimaryColorPicker').value = theme.primaryColor;
+        document.getElementById('cmsPrimaryColorText').value = theme.primaryColor;
+        document.getElementById('cmsSecondaryColorPicker').value = theme.secondaryColor;
+        document.getElementById('cmsSecondaryColorText').value = theme.secondaryColor;
+        document.getElementById('cmsFontSelect').value = theme.fontFamily;
+
+        document.getElementById('cmsTickerInput').value = cnt.tickerText;
+        document.getElementById('cmsHeroHighlightInput').value = cnt.heroTitleHighlight;
+        document.getElementById('cmsHeroDescInput').value = cnt.heroDescription;
+        document.getElementById('cmsStatMembersInput').value = cnt.statMembers;
+        document.getElementById('cmsStatLifeInput').value = cnt.statLife;
+        document.getElementById('cmsPresQuoteInput').value = cnt.presHeroQuote;
+      }
+    }
+
+    // ----------------------------------------------------
+    // 4. RENDERING FUNCTIONS
+    // ----------------------------------------------------
+    function renderUpazilaGrid() {
+      const container = document.getElementById('upazilaGrid');
+      container.innerHTML = upazilaData.map(u => `
+        <div onclick="filterByUpazila('${u.name}')" class="glass-card-light rounded-2xl p-4 cursor-pointer hover:border-emerald-500/50 group bg-white shadow-xs">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 font-bold">${u.badge}</span>
+            <span class="text-xs font-mono text-cyan-700 font-bold">${u.members} জন কর্মকর্তা</span>
+          </div>
+          <h4 class="text-base font-bold text-slate-900 font-bn group-hover:text-emerald-700 transition-colors">${u.name}</h4>
+          <p class="text-[11px] text-slate-600 font-bn mt-0.5">${u.liaison}</p>
+          <div class="mt-3 pt-2 border-t border-slate-100 flex items-center justify-between text-[10px] text-slate-500 font-mono">
+            <span>সদস্য তালিকা দেখুন</span>
+            <span class="text-emerald-700 font-bold group-hover:translate-x-1 transition-transform">&rarr;</span>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function renderCommittee(filter = 'all', targetBtn = null) {
+      const container = document.getElementById('committeeCardsContainer');
+      const filtered = filter === 'all' ? committeeMembers : committeeMembers.filter(m => m.category === filter);
+
+      container.innerHTML = filtered.map(m => `
+        <div class="glass-card-light rounded-2xl p-5 text-center flex flex-col items-center justify-between bg-white shadow-xs">
+          <div class="flex flex-col items-center">
+            <div class="w-20 h-20 rounded-2xl overflow-hidden p-0.5 bg-gradient-to-tr from-emerald-500 to-cyan-500 shadow-md mb-3">
+              <img src="${m.avatar}" alt="${m.name}" class="w-full h-full object-cover rounded-[14px]">
+            </div>
+            <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 mb-1.5 uppercase">${m.role}</span>
+            <h4 class="text-sm font-bold text-slate-900 font-bn">${m.name}</h4>
+            <p class="text-xs text-cyan-700 font-semibold font-bn mt-0.5">${m.designation}</p>
+            <p class="text-[11px] text-slate-500 font-bn">${m.service} • ${m.upazila}</p>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-slate-100 w-full flex items-center justify-between text-xs font-mono">
+            <a href="tel:${m.phone}" class="text-emerald-700 hover:text-emerald-800 font-bold flex items-center gap-1 font-sans">
+              <i class="fa-solid fa-phone text-[10px]"></i> কল
+            </a>
+            <button onclick="showToast('${m.name} এর বার্তা ডিরেক্টরিতে সংরক্ষিত রয়েছে।')" class="text-slate-600 hover:text-slate-900 font-bn">
+              বার্তা পাঠান
+            </button>
+          </div>
+        </div>
+      `).join('');
+
+      // Tab switcher handling
+      const tabs = document.querySelectorAll('.comm-tab');
+      tabs.forEach(b => {
+        b.classList.remove('bg-white', 'text-emerald-800', 'shadow-sm', 'font-bold');
+        b.classList.add('text-slate-600');
+      });
+
+      if (targetBtn && targetBtn.classList) {
+        targetBtn.classList.add('bg-white', 'text-emerald-800', 'shadow-sm', 'font-bold');
+        targetBtn.classList.remove('text-slate-600');
+      } else if (tabs.length > 0) {
+        tabs[0].classList.add('bg-white', 'text-emerald-800', 'shadow-sm', 'font-bold');
+        tabs[0].classList.remove('text-slate-600');
+      }
+    }
+
+    function renderDirectory(list) {
+      const container = document.getElementById('directoryGrid');
+      const countEl = document.getElementById('dirResultCount');
+      if (countEl) countEl.innerText = list.length;
+
+      if (list.length === 0) {
+        container.innerHTML = `
+          <div class="col-span-full py-12 text-center bg-white rounded-2xl border border-slate-200">
+            <i class="fa-solid fa-user-slash text-3xl text-slate-400 mb-2"></i>
+            <p class="text-slate-600 font-bn">কোনো কর্মকর্তার তথ্য পাওয়া যায়নি। ফিল্টার রিসেট করে পুনরায় অনুসন্ধান করুন।</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = list.map(m => `
+        <div class="glass-card-light rounded-2xl p-5 flex flex-col justify-between bg-white shadow-xs">
+          <div>
+            <div class="flex items-center justify-between">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-slate-100 text-slate-700 border border-slate-200 uppercase font-semibold">${m.memberCode}</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded-full ${m.type === 'আজীবন সদস্য' ? 'bg-amber-100 text-amber-800 border border-amber-300' : 'bg-emerald-100 text-emerald-800 border border-emerald-300'} font-bold">${m.type}</span>
+            </div>
+
+            <div class="mt-4 flex items-center gap-3">
+              <div class="w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-700 font-bold shrink-0 text-lg shadow-xs">
+                <i class="fa-solid fa-user-tie"></i>
+              </div>
+              <div class="overflow-hidden">
+                <h4 class="text-sm font-bold text-slate-900 font-bn truncate">${m.name}</h4>
+                <p class="text-xs text-cyan-700 font-semibold font-bn truncate">${m.designation}</p>
+                <p class="text-[11px] text-slate-500 font-bn truncate">${m.workplace}</p>
+              </div>
+            </div>
+
+            <div class="mt-4 pt-3 border-t border-slate-100 grid grid-cols-2 gap-2 text-xs font-bn">
+              <div>
+                <span class="text-[10px] text-slate-500 block font-mono">ক্যাডার/সার্ভিস</span>
+                <span class="text-slate-800 font-semibold">${m.cadreBadge}</span>
+              </div>
+              <div>
+                <span class="text-[10px] text-slate-500 block font-mono">উপজেলা</span>
+                <span class="text-slate-800 font-semibold">${m.upazila}</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+            <span class="text-rose-700 font-mono text-[11px] font-bold"><i class="fa-solid fa-droplet text-rose-600"></i> ${m.blood}</span>
+            <button onclick="viewMemberProfile(${m.id})" class="text-emerald-700 hover:text-emerald-800 font-bold font-bn flex items-center gap-1">
+              বিস্তারিত প্রোফাইল <i class="fa-solid fa-chevron-right text-[10px]"></i>
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function renderNotices() {
+      const container = document.getElementById('noticeListContainer');
+      container.innerHTML = noticesData.map(n => `
+        <div class="p-3.5 rounded-xl bg-slate-50 hover:bg-slate-100/80 border border-slate-200/80 transition-all flex items-center justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-mono font-bold">${n.badge}</span>
+            <div>
+              <h4 class="font-bold text-slate-900 hover:text-emerald-700 cursor-pointer text-xs" onclick="downloadNoticePdf('${n.title}')">${n.title}</h4>
+              <p class="text-[10px] text-slate-500 mt-0.5 font-mono">${n.date} &bull; ${n.file}</p>
+            </div>
+          </div>
+          <button onclick="downloadNoticePdf('${n.title}')" class="px-3 py-1.5 rounded-lg bg-white hover:bg-emerald-600 hover:text-white text-slate-700 text-xs border border-slate-200 shadow-xs transition-colors shrink-0 font-mono">
+            <i class="fa-solid fa-download"></i> PDF
+          </button>
+        </div>
+      `).join('');
+    }
+
+    function renderAdminMemberList() {
+      const container = document.getElementById('adminMembersListTable');
+      const countEl = document.getElementById('adminTotalMembersCount');
+      if (countEl) countEl.innerText = directoryMembers.length;
+
+      container.innerHTML = directoryMembers.map(m => `
+        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between gap-2 text-xs">
+          <div class="overflow-hidden">
+            <p class="font-bold text-slate-800 truncate">${m.name}</p>
+            <p class="text-[10px] text-slate-500 font-mono">${m.memberCode} &bull; ${m.upazila}</p>
+          </div>
+          <button onclick="deleteMember(${m.id})" class="px-2 py-1 rounded bg-rose-50 text-rose-700 border border-rose-200 hover:bg-rose-100 font-sans text-[10px] font-bold shrink-0">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </div>
+      `).join('');
+    }
+
+    // ----------------------------------------------------
+    // 5. DIRECTORY FILTERING & PROFILES
+    // ----------------------------------------------------
+    function filterDirectory() {
+      const query = document.getElementById('dirSearchInput').value.toLowerCase().trim();
+      const upazila = document.getElementById('dirUpazilaSelect').value;
+      const cadre = document.getElementById('dirCadreSelect').value;
+      const tier = document.getElementById('dirTierSelect').value;
+
+      const results = directoryMembers.filter(m => {
+        const matchesQuery = !query || 
+          m.name.toLowerCase().includes(query) ||
+          m.designation.toLowerCase().includes(query) ||
+          m.workplace.toLowerCase().includes(query) ||
+          m.memberCode.toLowerCase().includes(query);
+
+        const matchesUpazila = !upazila || m.upazila === upazila;
+        const matchesCadre = !cadre || m.cadre === cadre;
+        const matchesTier = !tier || m.type === tier;
+
+        return matchesQuery && matchesUpazila && matchesCadre && matchesTier;
+      });
+
+      renderDirectory(results);
+    }
+
+    function filterByUpazila(upazilaName) {
+      document.getElementById('dirUpazilaSelect').value = upazilaName;
+      filterDirectory();
+      location.href = "#directory";
+      showToast(`${upazilaName} উপজেলার কর্মকর্তাদের তালিকা প্রদর্শিত হচ্ছে।`);
+    }
+
+    function resetDirectoryFilters() {
+      document.getElementById('dirSearchInput').value = '';
+      document.getElementById('dirUpazilaSelect').value = '';
+      document.getElementById('dirCadreSelect').value = '';
+      document.getElementById('dirTierSelect').value = '';
+      renderDirectory(directoryMembers);
+    }
+
+    function openBloodFilter() {
+      location.href = "#directory";
+      showToast('ডিরেক্টরি থেকে রক্তের গ্রুপ অনুযায়ী কর্মকর্তাদের সন্ধান করুন।');
+    }
+
+    function viewMemberProfile(id) {
+      const m = directoryMembers.find(item => item.id === id);
+      if (!m) return;
+
+      const container = document.getElementById('memberModalContent');
+      container.innerHTML = `
+        <div class="p-5 bg-gradient-to-r from-emerald-700 to-teal-800 text-white flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-id-badge text-emerald-200"></i>
+            <h3 class="font-bold text-base">কর্মকর্তা ডিজিটাল আইডেন্টিটি</h3>
+          </div>
+          <button onclick="closeModal('memberDetailModal')" class="text-white/80 hover:text-white">
+            <i class="fa-solid fa-xmark text-lg"></i>
+          </button>
+        </div>
+
+        <div class="p-6 space-y-4 text-xs">
+          <div class="flex items-center gap-4">
+            <div class="w-16 h-16 rounded-2xl bg-emerald-100 border border-emerald-300 flex items-center justify-center text-emerald-700 text-2xl font-bold shadow-xs">
+              <i class="fa-solid fa-user-tie"></i>
+            </div>
+            <div>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-bold">${m.type}</span>
+              <h4 class="text-base font-bold text-slate-900 font-bn mt-1">${m.name}</h4>
+              <p class="text-xs text-cyan-700 font-semibold font-bn">${m.designation}</p>
+              <p class="text-[11px] text-slate-500 font-bn">${m.workplace}</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3 p-4 rounded-xl bg-slate-50 border border-slate-200 font-mono text-slate-700">
+            <div><span class="text-slate-500 text-[10px] block">MEMBER ID:</span><span class="text-slate-900 font-bold">${m.memberCode}</span></div>
+            <div><span class="text-slate-500 text-[10px] block">SERVICE:</span><span class="text-slate-900 font-bn">${m.cadreBadge}</span></div>
+            <div><span class="text-slate-500 text-[10px] block">ORIGIN UPAZILA:</span><span class="text-slate-900 font-bn">${m.upazila}, সাতক্ষীরা</span></div>
+            <div><span class="text-slate-500 text-[10px] block">BLOOD GROUP:</span><span class="text-rose-600 font-bold">${m.blood}</span></div>
+            <div class="col-span-2"><span class="text-slate-500 text-[10px] block">OFFICIAL EMAIL:</span><span class="text-cyan-700 font-bold">${m.email}</span></div>
+          </div>
+
+          <div class="pt-3 border-t border-slate-200 flex justify-end gap-2">
+            <button onclick="closeModal('memberDetailModal')" class="px-4 py-2 rounded-xl border border-slate-300 text-slate-700 font-semibold">বন্ধ করুন</button>
+            <button onclick="showToast('${m.name} এর কাছে বার্তা পাঠানো হয়েছে।'); closeModal('memberDetailModal');" class="px-5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold">বার্তা প্রেরণ</button>
+          </div>
+        </div>
+      `;
+      openModal('memberDetailModal');
+    }
+
+    function viewLeadershipSpotlight() {
+      const p = currentConfig.content;
+      showToast(`${p.presHeroName}: "${p.presHeroQuote}"`);
+    }
+
+    // ----------------------------------------------------
+    // 6. ADMIN & VISUAL ZERO-CODE CMS ENGINE
+    // ----------------------------------------------------
+    function openAdminPanelAuth() {
+      if (isAdminUnlocked) {
+        toggleAdminDrawer(true);
+      } else {
+        openModal('adminAuthModal');
+      }
+    }
+
+    function handleAdminAuth(e) {
+      e.preventDefault();
+      const pin = document.getElementById('adminPinInput').value;
+      if (pin === '2026') {
+        isAdminUnlocked = true;
+        closeModal('adminAuthModal');
+        toggleAdminDrawer(true);
+        showToast('অ্যাডমিন প্যানেল আনলক করা হয়েছে। স্বাগতম!');
+      } else {
+        showToast('ভুল পিন কোড! পুনরায় চেষ্টা করুন। (Default: 2026)', true);
+      }
+    }
+
+    function toggleAdminDrawer(open) {
+      const drawer = document.getElementById('adminDrawer');
+      if (open) {
+        drawer.classList.remove('translate-x-full');
+        renderAdminMemberList();
+      } else {
+        drawer.classList.add('translate-x-full');
+      }
+    }
+
+    function switchAdminTab(tabId, targetBtn) {
+      document.querySelectorAll('.admin-tab-content').forEach(el => el.classList.add('hidden'));
+      const buttons = document.querySelectorAll('.admin-tab-btn');
+      buttons.forEach(b => {
+        b.classList.remove('border-emerald-600', 'text-emerald-800', 'active', 'bg-white');
+        b.classList.add('border-transparent', 'text-slate-600');
+      });
+
+      const activeTab = document.getElementById(tabId);
+      if (activeTab) activeTab.classList.remove('hidden');
+
+      if (targetBtn) {
+        targetBtn.classList.add('border-emerald-600', 'text-emerald-800', 'active', 'bg-white');
+        targetBtn.classList.remove('border-transparent', 'text-slate-600');
+      }
+    }
+
+    function liveUpdateBrand() {
+      currentConfig.branding.logoUrl = document.getElementById('cmsLogoUrlInput').value || defaultSiteConfig.branding.logoUrl;
+      currentConfig.branding.titleEn = document.getElementById('cmsTitleEnInput').value || defaultSiteConfig.branding.titleEn;
+      currentConfig.branding.acronym = document.getElementById('cmsAcronymInput').value || defaultSiteConfig.branding.acronym;
+      currentConfig.branding.titleBn = document.getElementById('cmsTitleBnInput').value || defaultSiteConfig.branding.titleBn;
+      currentConfig.branding.tagline = document.getElementById('cmsTaglineInput').value || defaultSiteConfig.branding.tagline;
+
+      applyConfigToDom();
+      saveState();
+    }
+
+    function handleLogoUpload(e) {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(evt) {
+          currentConfig.branding.logoUrl = evt.target.result;
+          document.getElementById('cmsLogoUrlInput').value = evt.target.result;
+          applyConfigToDom();
+          saveState();
+          showToast('নতুন লোগো সফলভাবে আপলোড ও আপডেট করা হয়েছে!');
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+
+    function liveUpdateTexts() {
+      currentConfig.content.tickerText = document.getElementById('cmsTickerInput').value;
+      currentConfig.content.heroTitleHighlight = document.getElementById('cmsHeroHighlightInput').value;
+      currentConfig.content.heroDescription = document.getElementById('cmsHeroDescInput').value;
+      currentConfig.content.statMembers = document.getElementById('cmsStatMembersInput').value;
+      currentConfig.content.statLife = document.getElementById('cmsStatLifeInput').value;
+      currentConfig.content.presHeroQuote = document.getElementById('cmsPresQuoteInput').value;
+
+      applyConfigToDom();
+      saveState();
+    }
+
+    function applyPresetTheme(preset) {
+      currentConfig.theme.preset = preset;
+      if (preset === 'arctic') {
+        currentConfig.theme.primaryColor = '#059669';
+        currentConfig.theme.secondaryColor = '#0284c7';
+      } else if (preset === 'cyan') {
+        currentConfig.theme.primaryColor = '#0284c7';
+        currentConfig.theme.secondaryColor = '#0d9488';
+      } else if (preset === 'executive') {
+        currentConfig.theme.primaryColor = '#d97706';
+        currentConfig.theme.secondaryColor = '#059669';
+      } else if (preset === 'navy') {
+        currentConfig.theme.primaryColor = '#4338ca';
+        currentConfig.theme.secondaryColor = '#0284c7';
+      }
+      applyConfigToDom();
+      saveState();
+      showToast(`'${preset}' লাইট থিম সক্রিয় করা হয়েছে।`);
+    }
+
+    function updateCustomTheme() {
+      const prim = document.getElementById('cmsPrimaryColorPicker').value;
+      const sec = document.getElementById('cmsSecondaryColorPicker').value;
+      currentConfig.theme.primaryColor = prim;
+      currentConfig.theme.secondaryColor = sec;
+      document.getElementById('cmsPrimaryColorText').value = prim;
+      document.getElementById('cmsSecondaryColorText').value = sec;
+      applyConfigToDom();
+      saveState();
+    }
+
+    function changeFontFamily(font) {
+      currentConfig.theme.fontFamily = font;
+      applyConfigToDom();
+      saveState();
+      showToast(`টাইপোগ্রাফি ফন্ট '${font}' সক্রিয় করা হয়েছে।`);
+    }
+
+    // Direct Click-to-Edit Mode
+    function toggleInlineEditMode(active) {
+      const badge = document.getElementById('inlineEditBadge');
+      if (active) {
+        document.body.classList.add('cms-active');
+        badge.classList.remove('hidden');
+        document.querySelectorAll('[data-cms]').forEach(el => {
+          el.contentEditable = "true";
+          el.addEventListener('blur', syncInlineContent);
+        });
+        showToast('ইনলাইন এডিটিং সক্রিয়! যেকোনো লেখায় ক্লিক করে টাইপ করুন।');
+      } else {
+        document.body.classList.remove('cms-active');
+        badge.classList.add('hidden');
+        document.querySelectorAll('[data-cms]').forEach(el => {
+          el.contentEditable = "false";
+          el.removeEventListener('blur', syncInlineContent);
+        });
+        showToast('ইনলাইন এডিটিং বন্ধ করা হয়েছে।');
+      }
+    }
+
+    function syncInlineContent(e) {
+      const key = e.target.getAttribute('data-cms');
+      const val = e.target.innerText.trim();
+      if (key && currentConfig.content[key] !== undefined) {
+        currentConfig.content[key] = val;
+      } else if (key && currentConfig.branding[key] !== undefined) {
+        currentConfig.branding[key] = val;
+      }
+      saveState();
+      showToast(`'${key}' পরিবর্তন সংরক্ষিত হয়েছে!`);
+    }
+
+    // Member Operations
+    function openAddMemberModal() {
+      openModal('addMemberModal');
+    }
+
+    function handleSaveCustomMember(e) {
+      e.preventDefault();
+      const newM = {
+        id: Date.now(),
+        name: document.getElementById('newMemName').value,
+        cadre: document.getElementById('newMemCadre').value,
+        cadreBadge: document.getElementById('newMemCadre').options[document.getElementById('newMemCadre').selectedIndex].text,
+        designation: document.getElementById('newMemDesignation').value,
+        workplace: "গণপ্রজাতন্ত্রী বাংলাদেশ সরকার",
+        upazila: document.getElementById('newMemUpazila').value,
+        blood: document.getElementById('newMemBlood').value || 'N/A',
+        type: document.getElementById('newMemType').value,
+        memberCode: `SOF-NEW-${Math.floor(100 + Math.random()*900)}`,
+        email: "officer@sofbd.org"
+      };
+      directoryMembers.unshift(newM);
+      saveState();
+      renderDirectory(directoryMembers);
+      renderAdminMemberList();
+      closeModal('addMemberModal');
+      e.target.reset();
+      showToast('নতুন কর্মকর্তা ডিরেক্টরিতে যুক্ত হয়েছেন!');
+    }
+
+    function deleteMember(id) {
+      directoryMembers = directoryMembers.filter(m => m.id !== id);
+      saveState();
+      renderDirectory(directoryMembers);
+      renderAdminMemberList();
+      showToast('কর্মকর্তা রেকর্ড মুছে ফেলা হয়েছে।');
+    }
+
+    // JSON Sync & Reset
+    function exportSiteConfig() {
+      const bundle = {
+        config: currentConfig,
+        members: directoryMembers,
+        committee: committeeMembers,
+        exportedAt: new Date().toISOString()
+      };
+      const blob = new Blob([JSON.stringify(bundle, null, 2)], { type: "application/json" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = `SOFBD_Deploy_Data_${new Date().toISOString().slice(0, 10)}.json`;
+      a.click();
+      showToast('ডাটাবেজ ও কনফিগারেশন JSON সফলভাবে এক্সপোর্ট হয়েছে!');
+    }
+
+    function importSiteConfig(event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          try {
+            const data = JSON.parse(e.target.result);
+            if (data.config) currentConfig = data.config;
+            if (data.members) directoryMembers = data.members;
+            if (data.committee) committeeMembers = data.committee;
+            saveState();
+            applyConfigToDom();
+            renderDirectory(directoryMembers);
+            renderCommittee('all');
+            renderAdminMemberList();
+            showToast('কনফিগারেশন ব্যাকআপ সফলভাবে রিস্টোর হয়েছে!');
+          } catch(err) {
+            showToast('ভুল ফাইল ফরম্যাট! সঠিক JSON ফাইল নির্বাচন করুন।', true);
+          }
+        };
+        reader.readAsText(file);
+      }
+    }
+
+    function resetCMSDefaults() {
+      localStorage.removeItem('sof_light_config');
+      localStorage.removeItem('sof_light_members');
+      localStorage.removeItem('sof_light_committee');
+      currentConfig = JSON.parse(JSON.stringify(defaultSiteConfig));
+      directoryMembers = JSON.parse(JSON.stringify(directoryMembersDefault));
+      committeeMembers = JSON.parse(JSON.stringify(committeeDataDefault));
+      applyConfigToDom();
+      renderUpazilaGrid();
+      renderCommittee('all');
+      renderDirectory(directoryMembers);
+      renderAdminMemberList();
+      showToast('ডিফল্ট সেটিংসে রিসেট সম্পন্ন হয়েছে।');
+    }
+
+    // ----------------------------------------------------
+    // 7. FORM & MODAL HANDLERS
+    // ----------------------------------------------------
+    function openModal(id) {
+      const el = document.getElementById(id);
+      if (el) el.classList.remove('hidden');
+    }
+
+    function closeModal(id) {
+      const el = document.getElementById(id);
+      if (el) el.classList.add('hidden');
+    }
+
+    function toggleMobileNav() {
+      const d = document.getElementById('mobileDrawer');
+      d.classList.toggle('hidden');
+    }
+
+    function updateTicketPackage(val) {
+      document.getElementById('ticketCategoryDisplay').innerText = val;
+    }
+
+    function downloadTicketPdf() {
+      showToast('এজিএম ডিজিটাল প্রবেশপত্র (QR) ডাউনলোড হচ্ছে...');
+      setTimeout(() => closeModal('ticketModal'), 1000);
+    }
+
+    function downloadNoticePdf(title) {
+      showToast(`'${title}' সার্কুলার ফাইল ডাউনলোড হচ্ছে...`);
+    }
+
+    function toggleLanguage() {
+      const label = document.getElementById('currentLangLabel');
+      if (label.innerText === 'বাংলা') {
+        label.innerText = 'English';
+        showToast('Switched to English View.');
+      } else {
+        label.innerText = 'বাংলা';
+        showToast('বাংলা ভিউ সক্রিয় করা হয়েছে।');
+      }
+    }
+
+    function handleApplySubmit(e) {
+      e.preventDefault();
+      closeModal('applyModal');
+      showToast('সদস্যপদের আবেদন সফলভাবে জমা হয়েছে! ভেরিফিকেশন এসএমএস পাঠানো হবে।');
+      e.target.reset();
+    }
+
+    function handleLoginSubmit(e) {
+      e.preventDefault();
+      closeModal('loginModal');
+      showToast('সাতক্ষীরা অফিসার্স ফোরাম সেন্ট্রাল পোর্টালে স্বাগতম!');
+      e.target.reset();
+    }
+
+    function showToast(msg, isError = false) {
+      const box = document.getElementById('toastBox');
+      const msgEl = document.getElementById('toastMsg');
+      const icon = document.getElementById('toastIcon');
+
+      msgEl.innerText = msg;
+      icon.className = isError 
+        ? 'fa-solid fa-triangle-exclamation text-amber-400 text-base' 
+        : 'fa-solid fa-circle-check text-emerald-400 text-base';
+
+      box.classList.remove('-translate-y-10', 'opacity-0', 'pointer-events-none');
+      setTimeout(() => {
+        box.classList.add('-translate-y-10', 'opacity-0', 'pointer-events-none');
+      }, 3500);
+    }
+
+    // Keyboard Shortcut Alt + A to toggle Admin
+    window.addEventListener('keydown', (e) => {
+      if (e.altKey && (e.key === 'a' || e.key === 'A')) {
+        e.preventDefault();
+        openAdminPanelAuth();
+      }
+    });
+
+    // ----------------------------------------------------
+    // 8. SUBTLE LIGHT PARTICLES CANVAS
+    // ----------------------------------------------------
+    let isParticleRunning = true;
+    function initLightParticleCanvas() {
+      const canvas = document.getElementById('lightParticleCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let w = (canvas.width = window.innerWidth);
+      let h = (canvas.height = window.innerHeight);
+
+      window.addEventListener('resize', () => {
+        w = canvas.width = window.innerWidth;
+        h = canvas.height = window.innerHeight;
+      });
+
+      const particles = [];
+      const particleCount = Math.floor(w > 768 ? 32 : 16);
+
+      for (let i = 0; i < particleCount; i++) {
+        particles.push({
+          x: Math.random() * w,
+          y: Math.random() * h,
+          vx: (Math.random() - 0.5) * 0.35,
+          vy: (Math.random() - 0.5) * 0.35,
+          r: Math.random() * 2 + 1,
+          color: Math.random() > 0.5 ? 'rgba(5, 150, 105, 0.22)' : 'rgba(2, 132, 199, 0.18)'
+        });
+      }
+
+      function loop() {
+        if (!isParticleRunning) return;
+        ctx.clearRect(0, 0, w, h);
+
+        for (let i = 0; i < particles.length; i++) {
+          const p = particles[i];
+          p.x += p.vx;
+          p.y += p.vy;
+
+          if (p.x < 0) p.x = w;
+          if (p.x > w) p.x = 0;
+          if (p.y < 0) p.y = h;
+          if (p.y > h) p.y = 0;
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = p.color;
+          ctx.fill();
+
+          for (let j = i + 1; j < particles.length; j++) {
+            const p2 = particles[j];
+            const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
+            if (dist < 110) {
+              ctx.beginPath();
+              ctx.moveTo(p.x, p.y);
+              ctx.lineTo(p2.x, p2.y);
+              ctx.strokeStyle = `rgba(5, 150, 105, ${0.12 * (1 - dist / 110)})`;
+              ctx.stroke();
+            }
+          }
+        }
+        requestAnimationFrame(loop);
+      }
+      loop();
+    }
+
+    function toggleParticleCanvas(enable) {
+      isParticleRunning = enable;
+      const c = document.getElementById('lightParticleCanvas');
+      if (c) c.style.display = enable ? 'block' : 'none';
+      if (enable) initLightParticleCanvas();
+    }
+
+    // ----------------------------------------------------
+    // 9. ONLOAD INITIALIZATION
+    // ----------------------------------------------------
+    window.onload = function() {
+      applyConfigToDom();
+      renderUpazilaGrid();
+      renderCommittee('all');
+      renderDirectory(directoryMembers);
+      renderNotices();
+      initLightParticleCanvas();
+
+      // Close modals when backdrop is clicked
+      window.addEventListener('click', (e) => {
+        ['applyModal', 'ticketModal', 'memberDetailModal', 'addMemberModal', 'loginModal', 'adminAuthModal'].forEach(id => {
+          const modal = document.getElementById(id);
+          if (modal && e.target === modal) {
+            closeModal(id);
+          }
+        });
+      });
+    };
+  </script>
+</body>
+</html>
